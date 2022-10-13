@@ -2,7 +2,7 @@
 - 👀 I’m the flagship CRM product of Cliosight.
 - 🌱 I’m currently in the development phase.
 - 💞️ I’m looking to get completed soon.
-- 📫 Please send an email to jigisha@cliocrm.co to know more about me.
+- 📫 Please send an email to cliosight@gmail.com to know more about me.
 
 <!---
 cliocrm/cliocrm is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
