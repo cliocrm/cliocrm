@@ -1,0 +1,24 @@
+{
+  "name": "cliocrm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "lite": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cliocrm/cliocrm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cliocrm/cliocrm/issues"
+  },
+  "homepage": "https://github.com/cliocrm/cliocrm#readme",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
