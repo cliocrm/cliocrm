@@ -16,7 +16,10 @@ npm install
 
 This will install a local copy of the project. You will need to set up some environment variables before the app will run properly.
 
-In order to check the current working of the application for a logged in user, use the credentials username: trial@cliocrm.co password: ClioCRM123!
+In order to check the current working of the application for a logged in user, use the credentials 
+
+username: trial@cliocrm.co 
+password: ClioCRM123!
 
 If you wish to create your own Okta account to integrate Okta's Identity Platform for user authentication, you'll first need to:
 
