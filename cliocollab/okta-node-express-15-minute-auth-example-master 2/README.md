@@ -1,6 +1,6 @@
-# Example of Simple Authentication in Express
+# Editing and extending the Node JS application with ClioCRM
 
-This is an example of a simple web site with secure user authentication that can be built in 15 minutes using Express and Okta.
+This is an example of a simple web application with secure user authentication using Okta's [free developer account](https://developer.okta.com/signup/) and [ClioCRM's](https://cliosight.co#cliocrm) tables, forms, reports and triggers. Rest of the code includes examples of generic REST APIs. Use of ClioCRM's APIs are mentioned explicitly in the [documentation](https://cliosight.co#cliocrm) and code comments.
 
 **Prerequisites**: [Node.js](https://nodejs.org/en/).
 
@@ -9,14 +9,16 @@ This is an example of a simple web site with secure user authentication that can
 To install this example application, run the following commands:
 
 ```bash
-git clone git@github.com:oktadeveloper/okta-node-express-15-minute-auth-example.git
-cd okta-node-express-15-minute-auth-example
+git clone git@github.com:cliocrm/cliocrm.git
+cd cliocollab/okta-node-express-15-minute-auth-example-master 2/
 npm install
 ```
 
 This will install a local copy of the project. You will need to set up some environment variables before the app will run properly.
 
-To integrate Okta's Identity Platform for user authentication, you'll first need to:
+In order to check the current working of the application for a logged in user, use the credentials username: trial@cliocrm.co password: ClioCRM123!
+
+If you wish to create your own Okta account to integrate Okta's Identity Platform for user authentication, you'll first need to:
 
 * [Sign up for a free Okta Developer account](https://www.okta.com/developer/signup/)
 * You will get a URL similar to `https://dev-123456.oktapreview.com`.
@@ -27,7 +29,7 @@ You will need to create an application in Okta:
 
 * Log in to your Okta account, then navigate to **Applications** and click the **Add Application** button
 * Select **Web** and click **Next**
-* Give your application a name (e.g. "15 Minute Auth")
+* Give your application a name (e.g. "ClioCRM App")
 * Change the **Base URI** to `http://localhost:3000/` and the **Login redirect URI** to `http://localhost:3000/callback`, then click **Done**
 * Save your **Client ID** and **Client Secret** for later
 
@@ -38,7 +40,7 @@ Your Okta application should have settings similar to the following:
 You will also need to create an API token in Okta:
 
 * Log in to your Okta account, then navigate to **API > Tokens** and click the **Create Token** button
-* Enter a name that will help you remember what this is used for (e.g. "15 Minute Auth")
+* Enter a name that will help you remember what this is used for (e.g. "ClioCRM App")
 * Save the provided **token value** for later
   * This will only be displayed once. If you lose it, you will need to create another API token
 
@@ -59,20 +61,17 @@ You also need an app secret. One way to get a random `APP_SECRET` is to use the 
 npm install -g uuid-cli
 echo "APP_SECRET=`uuid`" >> .env
 ```
+You will need to install the dotenv module to start the application. Use the following command
+
+```bash
+npm install dotenv
+```
 
 Now you can run the web server with the following command:
 
 ```bash
 npm start
 ```
-
-## Links
-
-This example uses the [Okta Node SDK](https://github.com/okta/okta-sdk-nodejs) and the [Okta OIDC Middleware](https://github.com/okta/okta-oidc-js/tree/master/packages/oidc-middleware).
-
-## Help
-
-Please [raise an issue](https://github.com/oktadeveloper/okta-node-express-15-minute-auth-example/issues) if you find a problem with the example application, or visit our [Okta Developer Forums](https://devforum.okta.com/). You can also email [developers@okta.com](mailto:developers@okta.com) if would like to create a support ticket.
 
 ## License
 
