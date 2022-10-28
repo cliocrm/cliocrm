@@ -1,0 +1,46 @@
+{{#if userContext}}
+
+<body>
+<h1 class="text-center">Welcome {{userContext.userinfo.given_name}} to Customer Support Management!</h1>
+
+<section class="cta">
+
+            <div class="cta-item">
+                <div class="cta-text">
+                    <h2>Stay updated. </h2>
+                    <p>It only takes a minute to sign up and we will send you the latest updates on our project. </p>
+                </div>
+                <form class="cta-form mt-2" action="">
+                    <input class="input-block" type="text" placeholder="example@email.com"> <button class="btn-block" style="font-size: 1.4rem">Subscribe</button> </form>
+            </div>
+        </section>
+        
+   </body>     
+  
+{{else}}
+
+        <section class="intro container" style="min-height:80vh; margin-bottom: 40px">
+        <div class="row">
+        <div class="col-sm-5">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/005/482/350/small_2x/illustration-graphic-cartoon-character-of-problem-solving-vector.jpg" alt="illustration-intro">
+            </div>
+            <div class="col-sm-7 d-flex align-items-center">
+            
+            <div class="intro-content"><br/>
+                <h1> Handle customer issues smartly.</h1>
+		
+			<br/>
+			 <div class="row">
+                	<div class="col-sm-5">
+                <button class="btn mt-2" onclick="window.location.href='#allcomponents'">Sign in</button></div>
+                 
+                	<div class="col-sm-5">
+                <button class="btn mt-2" onclick="window.open('https://github.com/cliocrm'), '_blank'"> Sign up</button></div>
+                </div>
+             </div>
+             </div>
+	</div>
+
+        </section>
+  
+{{/if}}

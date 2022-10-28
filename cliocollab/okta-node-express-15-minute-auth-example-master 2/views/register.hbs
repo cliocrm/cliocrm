@@ -1,0 +1,32 @@
+<div class="container register">
+<br/><br/>
+<div class="row">
+<div class="col-md-6">
+<img style="width:100%" src="https://hannahshiels.github.io/front-end-mentor/fylo-dark-theme-landing-page-master/images/illustration-intro.png" alt="illustration-intro">
+</div>
+<div class="col-md-6">
+<h2>Sign up for free trial</h2>
+<br/>
+<form method="post">
+  {{#each fields}}
+    <div class="form-group">
+      
+      <input
+        required
+        name="{{this.name}}"
+        placeholder="{{this.label}}"
+        type="{{this.type}}"
+        class="form-control {{#if this.error}}is-invalid{{/if}}"
+        value="{{this.value}}"
+      />
+      <div class="invalid-feedback">{{this.error}}</div>
+    </div>
+  {{/each}}
+  
+  <button type="submit" class="btn btn-primary" style="border:0px solid white; width: 150px">Sign up</button>
+
+</form>
+</div>
+</div>
+
+</div>

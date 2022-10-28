@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, height=device-height, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
+    <title>ClioCRM</title>
+  </head>
+  
+  <style>
+:root {
+    --primary-color-dark-blue-1: hsl(217, 28%, 15%);
+    --primary-color-dark-blue-2: hsl(218, 28%, 13%);
+    --primary-color-dark-blue-3: hsl(216, 53%, 9%);
+    --primary-color-dark-blue-4: hsl(219, 30%, 18%);
+    --accent-color-cyan: hsl(176, 68%, 64%);
+    --accent-color-darkcyan: darkcyan;
+    --accent-color-blue: hsl(198, 60%, 50%);
+    --neutral-color-white: hsl(0, 0%, 100%);
+    --primary-color-floralwhite: floralwhite;
+    --font-heading: 'Raleway', sans-serif;
+    --font-body: 'Raleway', sans-serif;
+    --padding-sm: 2.5rem 2rem;
+    --padding-md: 3.5rem 3rem;
+    --padding-lg: 4.5rem 4rem;
+    --padding-footer: 12rem 2rem 2rem;
+    --padding-footer-tablet: 20rem 3rem 1rem;
+    --padding-footer-mobile: 25rem 3rem 1rem;
+    
+}
+
+body {
+    background-color: var(--neutral-color-white);
+    color: var(--primary-color-dark-blue-2);
+    font-family: var(--font-body);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    line-height: 1.7;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 1.7rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+h4 {
+	font-size: 1.1rem;
+}
+
+p {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 0.5rem 0;
+}
+
+.lg-p {
+    font-size: 1.6rem;
+}
+
+a {
+    color: black;
+    font-family: var(--font-heading);
+    text-decoration: none;
+}
+
+img {
+	 width:250px;
+}
+
+header {
+    display: flex;
+    padding: var(--padding-md);
+    justify-content: space-between;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 10px 10px;
+    color: floralwhite;
+}
+
+.nav-bar ul li {
+    display: inline-block;
+    margin-left: 1rem;
+    color: floralwhite;
+    padding: 15px 15px;
+}
+
+a:hover {
+    color: var(--accent-color-cyan);
+    transition: 600ms;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(255 255 255);
+    padding: 15px 15px;
+   
+}
+
+section {
+    padding: var(--padding-md);
+}
+
+.intro img,
+.productive img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.intro>div {
+    width: 100%;
+    
+}
+.intro>div h1 {
+	font-size: 2rem;
+}
+
+.ml-1 {
+    margin-left: 1rem;
+    
+}
+
+.mt-2 {
+    margin-top: 4rem;
+}
+
+
+button {
+    font-family: var(--font-heading);
+    color: var(--neutral-color-white);
+    height: 4rem;
+    font-weight: 300;
+    padding: 0 8px;
+     background: linear-gradient(50deg, var(--accent-color-cyan), var(--accent-color-blue));
+     border-radius: 25px;
+     border: 1px solid black;
+}
+
+input {
+    height: 4rem;
+    padding-left: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--neutral-color-white);
+    
+}
+
+.btn {
+    
+    width: 200px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--primary-color-floralwhite);
+    border-radius: 10px;
+    border: 1px solid white;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-right: 5px;
+}
+
+button.code{
+	background: white;
+	color: black;
+	border: 2px solid black;
+	font-weight: 600;
+	
+}
+
+button.main{
+	border: 1px solid white;
+	
+}
+
+section.signup input{
+	border: 2px solid darkcyan;
+	width: 100%;
+}
+
+.mt-3 {
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.btn-nav button {
+
+    font-family: var(--font-heading);
+    color: var(--neutral-color-white);
+    font-weight: 700;
+    padding: 0 0px;
+}
+
+button:hover {
+    cursor: pointer;
+    background: linear-gradient(50deg, var(--accent-color-blue), var(--accent-color-cyan));
+}
+
+.heading {
+	text-decoration: none;
+	font-weight: 800;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.about {
+	border: 3px dashed darkcyan;
+    border-radius: 20px;
+    padding-bottom: 5%;
+}
+
+.about.heading {
+	text-align: center;
+}
+
+
+div.polaroid {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: left;
+  border-radius: 20px;
+  padding: 30px 30px;
+  font-weight: 700;
+
+}
+
+section.components {
+	border: 3px dashed darkcyan;
+	border-radius: 20px; 
+	padding: 5%;
+}
+
+.features {
+    display: flex;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.features-item {
+    width: 33.33%;
+    padding: 0rem 1rem;
+    text-align: center;
+}
+
+.productive {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.productive-content {
+    padding-left: 4.5rem;
+}
+
+.content-link {
+    font-family: var(--font-body);
+    
+    color: var(--primary-color-dark-blue-3);
+}
+
+.content-link:hover {
+    color: var(--accent-color-cyan);
+    transition: 400ms;
+    border-bottom-color: var(--accent-color-cyan);
+}
+
+.trial p {
+	font-family: Raleway;
+	width: 100%;
+	font-weight: 1000;
+	text-decoration: none;
+	font-size: 30px;
+	background-color: white;
+	padding: 10%;
+	border: 3px solid darkcyan;
+	border-radius: 30px;
+}
+
+.allcomponents {
+	margin-bottom: 2rem;
+}
+
+.testimonial {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.testimonial-item {
+    margin-left: 3.5rem;
+    flex-basis: 33.33%;
+    border-radius: 5px;
+    background-color: var(--primary-color-dark-blue-4);
+    box-shadow: 2px 2px 20px 2px var(--primary-color-dark-blue-3);
+    padding: var(--padding-sm);
+}
+
+.testimonial-item:first-child {
+    margin-left: 0;
+}
+
+.testimonial-item-reviewer {
+    display: flex;
+    padding-top: 1rem;
+}
+
+.testimonial-item-reviewer img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+
+
+.input-block {
+    width: 60%;
+    max-width: 400px;
+    border: 1px solid black;
+}
+
+.btn-block {
+    width: 30%;
+    max-width: 450px;
+    margin-left: 1rem;
+}
+
+.contact-info {
+    margin: 20px;
+    padding: 30px;
+    display: grid;
+    background-color: white;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "logo logo logo logo" "location contacts links social" "attribution attribution attribution attribution";
+}
+
+
+
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer i {}
+
+.attribution-container {
+    
+    
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px; 
+    width:100%;
+}
+
+.attribution {
+    font-size: 16px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.container .register {
+	width: 100%;
+	align-items: left;
+	justify-content: left;
+	text-align: left;
+}
+
+.container input {
+	height: 4rem;
+	font-size: 1.2rem;
+}
+
+
+
+.productive .container .row {
+	background-color: white;
+
+}
+
+section.cliocrm {
+	border: 4px dashed darkcyan;
+	border-radius: 50px;
+	padding-top: 5%;
+	margin: 2%;
+	justify-content: center;
+	max-width: 95%;
+	text-align:center;
+	
+}
+
+
+hr {
+	border: 1px solid darkcyan;
+}
+
+.container.details hr {
+	border: 1px solid darkcyan;
+}
+
+.allcomponents img {
+	height: 90%;
+}
+
+.copyright {
+	color: black;
+	
+	padding-top: 50px;
+	text-align: center;
+}
+
+.container.details {
+	border: 3px dashed darkcyan; 
+	border-radius: 20px; 
+	padding-top: 5%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.container.details {
+ 	justify-content: center;
+ 	display: flex;
+ 	align-items: center;
+ 	
+}
+
+.container.intro h1 {
+	font-size: 30px;
+}
+
+.contact-form {
+	padding-top: 5%;
+}
+
+@media (max-width: 1000px) {
+    header {
+        padding: var(--padding-sm);
+    }
+    header img,
+    footer img {
+        width: 117px;
+        height: auto;
+    }
+    section {
+        padding: 20px 20px;
+    }
+    .intro>div,
+    .features-item {
+        width: 100%;
+    }
+    .testimonial,
+    .productive {
+        flex-direction: column;
+    }
+    .features-item {
+        padding: 2rem 0;
+    }
+    .productive-content {
+        margin-top: 2rem;
+        padding: 0;
+    }
+    .testimonial-item {
+        margin-left: 0;
+        margin-top: 3.5rem;
+        width: 80%;
+    }
+    .cta-item {
+        width: 90%;
+        padding: 2.5rem 2rem;
+    }
+    .cta-form {
+        flex-direction: column;
+    }
+    .input-block {
+        max-width: 100%;
+        width: auto;
+    }
+    .btn-block {
+        max-width: 100%;
+        width: auto;
+        min-width: 100%;
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    
+    .cta.btn-block {
+    	width: 200px;
+    }
+    .contact-info {
+        
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas: "logo" "location" "contacts" "links" "social" " attribution";
+    }
+    .contact-info>div,
+    .contact-info>nav {
+        padding: 1rem 0;
+    }
+    .contact-info-contacts {
+        align-items: flex-start;
+    }
+    .contact-info-links {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .contact-info-links-list:first-child {
+        margin-bottom: 1rem;
+    }
+    .contact-info-social-links {
+        justify-content: center;
+    }
+    
+    .container .register {
+	width: 100%;
+}
+
+ 
+ 	.heading {
+		text-align: center;
+	}
+	
+	.btn {
+    
+    width: 70%;
+	
+}
+
+@media (max-width: 500px) {
+
+	body {
+		text-align: left;
+	}
+    section {
+        padding: var(--padding-sm);
+    }
+    .cta-item {
+        min-width: 90%;
+        max-width: 90%;
+    }
+    .contact-info {
+        padding-left: 0%;
+    }
+        
+    .container .register {
+	width: 100%;
+	}
+	
+	.container .register button {
+	width: 100%;
+}
+}
+
+ button.code{
+	background: white;
+	color: black;
+	border: 2px solid black;
+	font-weight: 600;
+	width: 100%;
+}
+
+button.main{
+	border: 1px solid white;
+	width: 100%;
+}
+
+
+.footer {
+	margin-bottom: 5%;
+}
+
+</style>
+
+
+<style>
+
+.blog {
+	
+	margin-top: 5%;
+}
+
+.blog h3 {
+	text-align: center;
+}
+
+.blog a {
+	color: black;
+	text-decoration: underline;
+}
+
+.page-content {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  max-width: 1150px;
+  margin: 2.5rem auto;
+  font-family: var(--font-sans);
+}
+@media (min-width: 600px) {
+  .page-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 800px) {
+  .page-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  color: black;
+  background-color: whitesmoke;
+  border: 3px dashed darkcyan;
+  color: black;
+  border-radius: 20px;
+  
+}
+@media (min-width: 600px) {
+  .card {
+    height: 250px;
+    border: 3px dashed darkcyan;
+    color: black;
+  }
+}
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
+}
+.card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: white;
+  transform: translateY(-50%);
+  transition: transform calc(var(--d) * 2) var(--e);
+}
+
+.card:nth-child(1):before {
+  background: white;
+}
+
+.card:nth-child(2):before {
+	    background: white;
+  
+	}
+
+.card:nth-child(3):before {
+	  background: 	white;
+}
+
+
+.card:nth-child(4):before {
+	  background: 	white;
+}
+
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+.content > * + * {
+  margin-top: 1rem;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1;
+  color: black;
+  font-family: 'Raleway',  sans-serif;
+}
+
+.copy {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+
+.btn:hover {
+  background-color: #0d0d0d;
+}
+.btn:focus {
+  outline: 1px dashed yellow;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (min-width: 600px) {
+  .card:after {
+    transform: translateY(0);
+  }
+
+  .content {
+    transform: translateY(calc(100% - 4.5rem));
+  }
+  .content > *:not(.title) {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+  }
+
+  .card:hover,
+.card:focus-within {
+    align-items: center;
+  }
+  .card:hover:before,
+.card:focus-within:before {
+    transform: translateY(-4%);
+  }
+  .card:hover:after,
+.card:focus-within:after {
+    transform: translateY(-50%);
+  }
+  .card:hover .content,
+.card:focus-within .content {
+    transform: translateY(0);
+  }
+  .card:hover .content > *:not(.title),
+.card:focus-within .content > *:not(.title) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+  }
+
+  .card:focus-within:before, .card:focus-within:after,
+.card:focus-within .content,
+.card:focus-within .content > *:not(.title) {
+    transition-duration: 0s;
+  }
+}
+
+section.signup {
+	border: 2px solid darkcyan;
+	border-radius: 20px;
+	margin-bottom: 2%;
+}
+
+button.signup{
+	background: white;
+	color: darkcyan;
+	border: 2px solid darkcyan;
+	font-weight: 600;
+	width: 150px;
+	border-radius: 25px;
+}
+
+button.signup:hover {
+	background: white;
+	color: darkcyan;
+	border: 4px solid darkcyan;
+	font-weight: 800;
+	width: 150px;
+	border-radius: 25px;
+}
+
+</style>
+
+
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+  
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/">ClioCRM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav"><br/>
+              <a class="nav-item nav-link" href="/#features">ClioCollab</a>
+              <a class="nav-item nav-link" href="/#features">Surveys</a>
+              <a class="nav-item nav-link" href="/#features">Blog</a>
+              <a class="nav-item nav-link" href="#contact">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="container pt-4">
+<section class="intro container">
+	<div class="row">
+		
+		<div class="col d-flex align-items-center">
+
+			<div class="row">
+			<div class="col-sm-12">
+				<h1 class="cliocrmtitle">Discover, Collect and Query data in the simplest way!</h1><br/>
+				 <h3>Build customized surveys and forms for apps with links in minutes. Start for free. </h3><br/> 
+			</div>
+			
+			<div class="col-sm-12">
+			<button class="btn mt-2 main"
+						onclick="#contactus">
+						Get Email Updates</button>
+					<button class="btn mt-2 main"
+						onclick="window.open('https://github.com/cliocrm'), '_blank'">
+						Follow us on GitHub</button>
+			</div>
+			
+			</div>
+
+		</div>
+		
+				
+		<div class="col-sm-6">
+			<img
+				src="https://img.freepik.com/free-vector/new-app-development-desktop_23-2148684987.jpg?w=740&t=st=1666537762~exp=1666538362~hmac=aeda036c137602c6d5406671f7e78a298e630520374f13ea9310f969949ad025"
+				alt="illustration-intro"/>
+		</div>
+		
+	</div>
+
+</section>
+
+
+    
+    <div id="contact" class="container signup">
+			<div class="contact-form">
+			<div class="row align-items-center">
+			
+			<div class="col-sm-6">
+			<h3 style="text-align: left; margin-left:5px;">
+				Forms and reports from tables for any app. <hr/>Email and messaging for updates and alerts.
+			<hr/>Data export and import to and from files and dbs. <hr/>Built-in automation of workflows and campaigns.<hr/>Access control to accommodate multiple users.
+			<hr/>
+			</h3>
+
+			</div>
+			
+		   <div id="contactus" class="col-sm-6">
+			<div class="polaroid">
+			<iframe style="width: 100%; height: 320px"
+				src="https://app.cliosight.co/app/forms/32/show?noNavbar=true"></iframe>
+			<p style="margin-left:15px;">Created with ClioCRM table and form</p>
+			</div>
+		
+			</div>
+	
+			</div>
+			<h6 class="copyright">Copyright 2022 Cliosight India</h6>
+			</div>
+
+</div>
+    
+  </body>
+</html>

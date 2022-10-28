@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, height=device-height, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans|Raleway'>
+    <title>ClioCRM</title>
+  </head>
+  
+  <style>
+:root {
+    --primary-color-dark-blue-1: hsl(217, 28%, 15%);
+    --primary-color-dark-blue-2: hsl(218, 28%, 13%);
+    --primary-color-dark-blue-3: hsl(216, 53%, 9%);
+    --primary-color-dark-blue-4: hsl(219, 30%, 18%);
+    --accent-color-cyan: hsl(176, 68%, 64%);
+    --accent-color-darkcyan: darkcyan;
+    --accent-color-blue: hsl(198, 60%, 50%);
+    --neutral-color-white: hsl(0, 0%, 100%);
+    --primary-color-floralwhite: floralwhite;
+    --font-heading: 'Raleway', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --padding-sm: 2.5rem 2rem;
+    --padding-md: 3.5rem 3rem;
+    --padding-lg: 4.5rem 4rem;
+    --padding-footer: 12rem 2rem 2rem;
+    --padding-footer-tablet: 20rem 3rem 1rem;
+    --padding-footer-mobile: 25rem 3rem 1rem;
+    
+}
+
+body {
+    background-color: var(--neutral-color-white);
+    color: var(--primary-color-dark-blue-2);
+    font-family: var(--font-body);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 1.7rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+h4 {
+	font-size: 1.1rem;
+}
+
+p {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 0.5rem 0;
+}
+
+.lg-p {
+    font-size: 1.6rem;
+}
+
+a {
+    color: black;
+    font-family: var(--font-heading);
+    text-decoration: none;
+}
+
+img {
+	 width:200px;
+}
+
+header {
+    display: flex;
+    padding: var(--padding-md);
+    justify-content: space-between;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 10px 10px;
+    color: floralwhite;
+}
+
+.nav-bar ul li {
+    display: inline-block;
+    margin-left: 1rem;
+    color: floralwhite;
+    padding: 15px 15px;
+}
+
+a:hover {
+    color: var(--accent-color-cyan);
+    transition: 600ms;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(255 255 255);
+    padding: 15px 15px;
+   
+}
+
+section {
+    padding: var(--padding-md);
+}
+
+.intro img,
+.productive img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.intro>div {
+    width: 100%;
+    
+}
+.intro>div h1 {
+	font-size: 2rem;
+}
+
+.ml-1 {
+    margin-left: 1rem;
+    
+}
+
+.mt-2 {
+    margin-top: 4rem;
+}
+
+
+button {
+    font-family: var(--font-heading);
+    color: var(--neutral-color-white);
+    height: 4rem;
+    font-weight: 400;
+    padding: 0 8px;
+     background: linear-gradient(50deg, var(--accent-color-cyan), var(--accent-color-blue));
+     border-radius: 25px;
+     border: 1px solid black;
+}
+
+input {
+    height: 4rem;
+    padding-left: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--neutral-color-white);
+    
+}
+
+.btn {
+    
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--primary-color-floralwhite);
+    border-radius: 10px;
+    border: 1px solid white;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-right: 5px;
+}
+
+button.code{
+	background: white;
+	color: black;
+	border: 1px solid black;
+	font-weight: 400;
+	
+}
+
+button.main{
+	border: 1px solid white;
+	
+}
+
+section.signup input{
+	border: 1px solid darkcyan;
+	width: 100%;
+}
+
+.mt-3 {
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.btn-nav button {
+
+    font-family: var(--font-heading);
+    color: var(--neutral-color-white);
+    font-weight: 700;
+    padding: 0 0px;
+}
+
+button:hover {
+    cursor: pointer;
+    background: linear-gradient(50deg, var(--accent-color-blue), var(--accent-color-cyan));
+}
+
+button.code:hover {
+	cursor: pointer;
+	background: white;
+	border: 1px solid darkcyan;
+	color: darkcyan;
+}
+
+.heading {
+	text-decoration: none;
+	font-weight: 800;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.about {
+	border: 2px solid darkcyan;
+    border-radius: 0px;
+    padding-bottom: 5%;
+}
+
+.about.heading {
+	text-align: center;
+}
+
+
+div.polaroid {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: left;
+  border-radius: 20px;
+  padding: 30px 30px;
+  font-weight: 400;
+
+}
+
+section.components {
+	border: 2px dashed darkcyan;
+	border-radius: 0px; 
+	padding: 5%;
+}
+
+.features {
+    display: flex;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.features-item {
+    width: 33.33%;
+    padding: 0rem 1rem;
+    text-align: center;
+}
+
+.productive {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.productive-content {
+    padding-left: 4.5rem;
+}
+
+.content-link {
+    font-family: var(--font-body);
+    
+    color: var(--primary-color-dark-blue-3);
+}
+
+.content-link:hover {
+    color: var(--accent-color-cyan);
+    transition: 400ms;
+    border-bottom-color: var(--accent-color-cyan);
+}
+
+section.trial {
+	
+	width: 100%;
+	padding: 5%;
+	border: 2px solid darkcyan;
+	border-radius: 0px;
+}
+
+section.trial p {
+	font-family: Raleway;
+	color: white;
+	font-weight: 400;
+	text-decoration: none;
+	font-size: 30px;
+}
+
+section.trial p.black {
+	color: black;
+}
+
+.allcomponents {
+	margin-bottom: 2rem;
+}
+
+.testimonial {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.testimonial-item {
+    margin-left: 3.5rem;
+    flex-basis: 33.33%;
+    border-radius: 5px;
+    background-color: var(--primary-color-dark-blue-4);
+    box-shadow: 2px 2px 20px 2px var(--primary-color-dark-blue-3);
+    padding: var(--padding-sm);
+}
+
+.testimonial-item:first-child {
+    margin-left: 0;
+}
+
+.testimonial-item-reviewer {
+    display: flex;
+    padding-top: 1rem;
+}
+
+.testimonial-item-reviewer img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+
+
+.input-block {
+    width: 60%;
+    max-width: 400px;
+    border: 1px solid black;
+}
+
+.btn-block {
+    width: 30%;
+    max-width: 450px;
+    margin-left: 1rem;
+}
+
+.contact-info {
+    margin: 20px;
+    padding: 30px;
+    display: grid;
+    background-color: white;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "logo logo logo logo" "location contacts links social" "attribution attribution attribution attribution";
+}
+
+
+
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.attribution-container {
+    
+    
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px; 
+    width:100%;
+}
+
+.attribution {
+    font-size: 16px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.container .register {
+	width: 100%;
+	align-items: left;
+	justify-content: left;
+	text-align: left;
+}
+
+.container input {
+	height: 4rem;
+	font-size: 1.2rem;
+}
+
+
+
+.productive .container .row {
+	background-color: white;
+
+}
+
+section.cliocrm {
+	border: 1px dashed darkcyan;
+	border-radius: 50px;
+	padding-top: 5%;
+	margin: 2%;
+	justify-content: center;
+	max-width: 95%;
+	text-align:center;
+	
+}
+
+section.intro h1.cliocrmtitle {
+ font-size: 50px;
+}
+
+
+hr {
+	border: 1px solid darkcyan;
+}
+
+.container.details hr {
+	border: 1px solid darkcyan;
+}
+
+.productive img {
+	
+	width: 80%;
+}
+
+.copyright {
+	color: black;
+	
+	padding-top: 50px;
+	text-align: center;
+}
+
+.container.details {
+	border: 1px dashed darkcyan; 
+	border-radius: 20px; 
+	padding-top: 5%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.container.details {
+ 	justify-content: center;
+ 	display: flex;
+ 	align-items: center;
+ 	
+}
+
+.container.intro h1 {
+	font-size: 30px;
+}
+
+.contact-form {
+	padding-top: 5%;
+}
+
+section.polaroid h3.text-align-center {
+	text-align: center;
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: var(--padding-sm);
+    }
+    header img,
+    footer img {
+        width: 117px;
+        height: auto;
+    }
+    section {
+        padding: 20px 20px;
+    }
+    .intro>div,
+    .features-item {
+        width: 100%;
+    }
+    .testimonial,
+    .productive {
+        flex-direction: column;
+    }
+    .features-item {
+        padding: 2rem 0;
+    }
+    .productive-content {
+        margin-top: 2rem;
+        padding: 0;
+    }
+    .testimonial-item {
+        margin-left: 0;
+        margin-top: 3.5rem;
+        width: 80%;
+    }
+    .button {
+        width: 100%;
+    }
+    .cta-form {
+        flex-direction: column;
+    }
+    .input-block {
+        max-width: 100%;
+        width: auto;
+    }
+    .btn-block {
+        max-width: 100%;
+        width: auto;
+        min-width: 100%;
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    
+    .cta.btn-block {
+    	width: 200px;
+    }
+    .contact-info {
+        
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas: "logo" "location" "contacts" "links" "social" " attribution";
+    }
+    .contact-info>div,
+    .contact-info>nav {
+        padding: 1rem 0;
+    }
+    .contact-info-contacts {
+        align-items: flex-start;
+    }
+    .contact-info-links {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .contact-info-links-list:first-child {
+        margin-bottom: 1rem;
+    }
+    .contact-info-social-links {
+        justify-content: center;
+    }
+    
+    .container .register {
+	width: 100%;
+}
+
+ 
+ 	.heading {
+		text-align: center;
+	}
+	
+	.btn {
+    
+    width: 100%;
+	
+}
+
+@media (max-width: 500px) {
+
+	body {
+		text-align: left;
+	}
+    section {
+        padding: var(--padding-sm);
+    }
+    .cta-item {
+        min-width: 90%;
+        max-width: 90%;
+    }
+    .contact-info {
+        padding-left: 0%;
+    }
+        
+    .container .register {
+	width: 100%;
+	}
+	
+	.container .register button {
+	width: 100%;
+}
+}
+
+ button.code{
+	background: white;
+	color: black;
+	border: 1px solid black;
+	font-weight: 400;
+	width: 100%;
+}
+
+button.main{
+	border: 1px solid white;
+	width: 100%;
+}
+
+
+.footer {
+	margin-bottom: 5%;
+}
+
+
+section.signup {
+	border: 0px solid darkcyan;
+	border-radius: 20px;
+}
+
+button.signup{
+	background: white;
+	color: black;
+	border: 1px solid black;
+	font-weight: 400;
+	width: 150px;
+	border-radius: 25px;
+	
+}
+
+button.signup:hover {
+	background: white;
+	color: darkcyan;
+	border: 1px solid darkcyan;
+	font-weight: 500;
+	width: 150px;
+	border-radius: 10px;
+}
+
+</style>
+
+
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+  
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/cliocrm">ClioCRM</a>
+          <div class="navbar-nav">
+            {{#if userContext}}
+              	
+              	
+                <a class="nav-item nav-link" href="/logout">Logout</a>
+                
+              
+            {{else}}
+              
+              <a class="nav-item nav-link" href="/login"> ClioCollab Sign in</a>
+              <a class="nav-item nav-link" href="/register"> ClioCollab Sign up</a>
+            {{/if}}
+          </div>
+        </div>
+    </nav>
+    <main class="container pt-4">{{{body}}}</main>
+    
+    
+  </body>
+</html>
