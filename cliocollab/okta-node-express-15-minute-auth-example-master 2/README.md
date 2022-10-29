@@ -24,7 +24,7 @@ password: Lucky2022
 If you wish to create your own Okta account to integrate Okta's Identity Platform for user authentication, you'll first need to:
 
 * [Sign up for a free Okta Developer account](https://www.okta.com/developer/signup/)
-* You will get a URL similar to `https://dev-123456.oktapreview.com`.
+* You will get a URL similar to `https://dev-123456.okta.com`.
   * Save this URL for later
   * You will also use this URL to login to your Okta account
 
