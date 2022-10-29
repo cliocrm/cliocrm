@@ -9,7 +9,7 @@ This is an example of a simple web application with secure user authentication u
 To install this example application, run the following commands:
 
 ```bash
-git clone git@github.com:cliocrm/cliocrm.git
+git clone https://github.com/cliocrm/cliocrm.git
 cd cliocollab/okta-node-express-15-minute-auth-example-master 2/
 npm install
 ```
