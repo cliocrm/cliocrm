@@ -19,6 +19,7 @@ This will install a local copy of the project. You will need to set up some envi
 In order to check the current working of the application for a logged in user, use the credentials 
 
 username: trial@cliocrm.co 
+
 password: Lucky2022
 
 If you wish to create your own Okta account to integrate Okta's Identity Platform for user authentication, you'll first need to:
