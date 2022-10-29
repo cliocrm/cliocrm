@@ -19,7 +19,7 @@ This will install a local copy of the project. You will need to set up some envi
 In order to check the current working of the application for a logged in user, use the credentials 
 
 username: trial@cliocrm.co 
-password: ClioCRM123!
+password: Lucky2022
 
 If you wish to create your own Okta account to integrate Okta's Identity Platform for user authentication, you'll first need to:
 
@@ -32,18 +32,18 @@ You will need to create an application in Okta:
 
 * Log in to your Okta account, then navigate to **Applications** and click the **Add Application** button
 * Select **Web** and click **Next**
-* Give your application a name (e.g. "ClioCRM App")
+* Give your application a name (e.g. "ClioCRM Sample App")
 * Change the **Base URI** to `http://localhost:3000/` and the **Login redirect URI** to `http://localhost:3000/callback`, then click **Done**
 * Save your **Client ID** and **Client Secret** for later
 
 Your Okta application should have settings similar to the following:
 
-![Okta Application Settings](images/okta-app-settings.png)
+![Okta Application Settings](okta_new.png)
 
 You will also need to create an API token in Okta:
 
 * Log in to your Okta account, then navigate to **API > Tokens** and click the **Create Token** button
-* Enter a name that will help you remember what this is used for (e.g. "ClioCRM App")
+* Enter a name that will help you remember what this is used for (e.g. "ClioCRM Sample App")
 * Save the provided **token value** for later
   * This will only be displayed once. If you lose it, you will need to create another API token
 
