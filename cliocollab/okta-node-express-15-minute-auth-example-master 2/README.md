@@ -1,4 +1,4 @@
-# Editing and extending the Node JS application with ClioCRM
+# Editing and extending ClioCollab, the sample Node JS application
 
 This is an example of a simple web application with secure user authentication using Okta's [free developer account](https://developer.okta.com/signup/) and [ClioCRM's](https://cliosight.co#cliocrm) tables, forms, reports and triggers. Rest of the code includes examples of generic REST APIs. Use of ClioCRM's APIs are mentioned explicitly in the [documentation](https://cliosight.co#cliocrm) and code comments.
 
