@@ -20,32 +20,31 @@ app.use(
 
 const { ExpressOIDC } = require('@okta/oidc-middleware');
 const oidc = new ExpressOIDC({
-  appBaseUrl: process.env.HOST_URL,
   issuer: `${process.env.OKTA_ORG_URL}/oauth2/default`,
   client_id: process.env.OKTA_CLIENT_ID,
   client_secret: process.env.OKTA_CLIENT_SECRET,
-  redirect_uri: `${process.env.HOST_URL}/callback`,
+  redirect_uri: `${process.env.HOST_URL}/authorization-code/callback`,
+  appBaseUrl: 'http://localhost:3000',
   scope: 'openid profile',
   routes: {
-    loginCallback: {
-      path: '/callback'
-    }
-  }
-});
+	    login: {
+	      path: "/login"
+	    },
+	    callback: {
+	      path: "/callback",
+	      defaultRedirect: "/dashboard"
+	    }
+	  }
+	});
 
 app.use(oidc.router);
 
-app.get('/logout', (req, res) => {
-	  if (req.userContext) {
-	    const idToken = req.userContext.tokens.id_token
-	    const to = encodeURI(process.env.HOST_URL)
-	    const params = `id_token_hint=${idToken}&post_logout_redirect_uri=${to}`
-	    req.logout()
-	    res.redirect(`${process.env.OKTA_ORG_URL}/oauth2/default/v1/logout?${params}&output=embed`)
-	  } else {
-	    res.redirect('/')
-	  }
-	})
+app.get("/logout", function(req, res, next) {
+	  req.logout(function(err) {
+	    if (err) { return next(err); }
+	    res.redirect("/");
+	  });
+	});
 
 app.use('/', require('./routes/index'));
 app.use('/register', require('./routes/register'));
