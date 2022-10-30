@@ -61,7 +61,6 @@ OKTA_TOKEN={yourOktaToken}
 You also need an app secret. One way to get a random `APP_SECRET` is to use the following commands, which will generate a random value and add it to your `.env` file.
 
 ```bash
-apt install uuid
 npm install -g uuid-cli
 echo "APP_SECRET=`uuid`" >> .env
 ```
