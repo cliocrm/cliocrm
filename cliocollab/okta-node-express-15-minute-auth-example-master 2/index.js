@@ -18,6 +18,20 @@ app.use(
   })
 );
 
+const session = require('express-session');
+const MemoryStore = require('memorystore')(session);
+
+const sessionConfig = {
+  secret: "[secret]",
+  resave: false,
+  saveUninitialized: false,
+  cookie: { "maxAge": 86400000 },
+  store: new MemoryStore({
+    checkPeriod: 86400000
+  })
+};
+app.use(session(sessionConfig));
+
 const { ExpressOIDC } = require('@okta/oidc-middleware');
 const oidc = new ExpressOIDC({
   issuer: `${process.env.OKTA_ORG_URL}/oauth2/default`,
