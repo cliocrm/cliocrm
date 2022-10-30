@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 
@@ -18,13 +19,27 @@ app.use(
   })
 );
 
+const session = require('express-session');
+const MemoryStore = require('memorystore')(session);
+
+const sessionConfig = {
+  secret: "[secret]",
+  resave: false,
+  saveUninitialized: false,
+  cookie: { "maxAge": 86400000 },
+  store: new MemoryStore({
+    checkPeriod: 86400000
+  })
+};
+app.use(session(sessionConfig));
+
 const { ExpressOIDC } = require('@okta/oidc-middleware');
 const oidc = new ExpressOIDC({
   issuer: `${process.env.OKTA_ORG_URL}/oauth2/default`,
   client_id: process.env.OKTA_CLIENT_ID,
   client_secret: process.env.OKTA_CLIENT_SECRET,
   redirect_uri: `${process.env.HOST_URL}/authorization-code/callback`,
-  appBaseUrl: 'http://localhost:3000',
+  appBaseUrl: `${process.env.HOST_URL}`,
   scope: 'openid profile',
   routes: {
 	    login: {
@@ -47,12 +62,8 @@ app.get("/logout", function(req, res, next) {
 	});
 
 app.use('/', require('./routes/index'));
-app.use('/register', require('./routes/register'));
-app.use('/contacts', require('./routes/contacts'));
-app.use('/videoconf', require('./routes/videoconf'));
-app.use('/support', require('./routes/support'));
-app.use('/cliocrmapp', require('./routes/cliocrmapp'));
-app.use('/cliocrm', require('./routes/cliocrm'));
+app.use('/cliocollab', require('./routes/cliocollab'));
+app.use('/signedin', require('./routes/signedin'));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`App listening on port ${port}`));

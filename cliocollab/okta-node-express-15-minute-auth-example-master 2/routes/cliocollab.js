@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   const { userContext } = req;
-  res.render('cliocrm', { userContext });
+  res.render('cliocollab', { userContext });
 });
 
 module.exports = router;
