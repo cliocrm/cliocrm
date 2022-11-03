@@ -1,21 +1,2167 @@
 {{#if userContext}}
 
-<body>
 <h1 class="text-center">Welcome {{userContext.userinfo.given_name}} to Video Conferencing!</h1>
 
-<section class="cta">
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, height=device-height, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+      
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+<!-- load polyfill, local copy first for local testing -->
+  <script type="text/javascript">
+    if(location.protocol === 'http:' && document.domain === 'cliosuite-intro.cliosight.com') {
+      location.href = location.href.replace('http:', 'https:');
+    }
+  </script>
+  <title>Cliosuite Collab & Support</title>
+  <link rel="canonical" href="/demos/">
+  
+  
+ <style>
 
-            <div class="cta-item">
-                <div class="cta-text">
-                    <h2>Stay updated. </h2>
-                    <p>It only takes a minute to sign up and we will send you the latest updates on our project. </p>
-                </div>
-                <form class="cta-form mt-2" action="">
-                    <input class="input-block" type="text" placeholder="example@email.com"> <button class="btn-block" style="font-size: 1.4rem">Subscribe</button> </form>
-            </div>
-        </section>
+  .footer_clio {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    float: bottom;
+    text-align: center;
+    font-family:arial-black;
+    font-size:30px;
+  }
+  
+  div{
+  
+  font-family: arial-black;
+  
+  }
+  
+  #outerdiv 
+{ 
+	width:460px; 
+	height:120px; 
+	overflow:hidden; 
+	position:relative; 
+}
+
+#innerIframe 
+{ 
+	position:absolute; 
+	top:-98px; 
+	right:0px;
+	left:5px; 
+	width:440px; 
+	height:1290px; 
+}
+
+#outerdiv1 
+{ 
+	width:600px; 
+	height:90px; 
+	overflow:hidden; 
+	position:relative; 
+}
+
+#innerIframe1
+{ 
+	position:absolute; 
+	top:-120px; 
+	left:-2px; 
+	width:422px; 
+	height:690px; 
+}
+
+  .search-container {
+    text-align: left;
+    margin: -2em 5%;
+    margin-top: 0;
+  }
+
+  .search-container input {
+    background-color: transparent;
+  }
+
+  .search-container td {
+    border: 0;
+    vertical-align: top;
+    padding: 0;
+    border-top: none;
+    border-right: none;
+  }
+
+  .table-style {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin-top: 0px;
+    margin-bottom: 16px;
+    display: block;
+    overflow: auto;
+    word-break: normal;
+    color: rgb(51, 51, 51);
+    font-family: arial, arial-black;
+    font-size: 16px;
+    line-height: 25.6000003814697px;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+  .tr-style {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(204, 204, 204);
+    background-color: rgb(248, 248, 248);
+  }
+
+  .td-style {
+    padding: 6px 13px;
+    border: 1px solid rgb(221, 221, 221);
+  }
+
+  .td-style2 {
+    color: rgb(65, 131, 196);
+    text-decoration: none;
+    background: transparent;
+  }
+
+
+  .table-style {
+    min-width: 60%!important;
+    display: table!important;
+    text-align: left!important;
+  }
+
+  .table-style-container {}
+  </style>
+
+
+
+
+<!------------------------ Call Schedule ---------------------------->
+     
+<div class="modal fade" id= "callScheduleModal" role="dialog">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+    <h2 style="font-size:30px;text-align:center;margin-left:15px;font-family:arial-black; color:black"> 1-1 Video Conference</h2>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>    
+    </div>
+    <div class="modal-body">
+     <div style="margin-left:0px;margin-bottom:0px;" class="row">
+         <div class="col-md-6" style="margin-bottom:5px;">
+			<div class="input-group">
+                     <input style="height:40px; " id="regEmail" type="email" class="input-group form-control"
+                            placeholder="Cliosuite Registered Email" />
+         </div> 
+         </div>
+         <div class="col-md-6" style="margin-top:0px;">
+             <div class="input-group">
+                 <input style="height:40px; " id="regPassword" type="password" class="input-group form-control"
+                        placeholder="Cliosuite Passoword" /><br/>
+             </div>
+     </div> 
+     </div>
+     
+      <div style="margin-left:0px;margin-bottom:5px;" class="row">
+          
+          <div class="col-md-12">
+                  <div class="input-group">
+                      <p style="font-size:17px;"> Not registered yet? <a href="http://signup.cliosight.com/" target="_blank" style="color:blue" >Sign up</a> to get editing, scheduling and reminder options.</p>
+              </div>
+          </div> 
+  </div>
+  
+  <div style="margin-left:0px;margin-bottom:5px;" class="row">
+          
+          <div class="col-md-6" style="margin-bottom:5px;">
+                  <div class="input-group">
+                      <input style="height:40px; " id="contactEmail" type="email" class="input-group form-control"
+                             placeholder="Email Id of Contact*" required><br/>
+              </div>
+          </div> 
+          
+          <div class="col-md-6">
+                  <div class="input-group">
+                      <input style="height:40px; " id="yourEmail" type="email" class="input-group form-control"
+                             placeholder="Organizer Email Id*" required><br/>
+              </div>
+          </div> 
+  </div>
+
+     <div style="margin-left:0px;margin-bottom:5px;" class="row">
+         <div class="col-md-6" style="margin-bottom:5px;">
+                 <div class="input-group">
+                     <input style="height:40px; " id="contactName" type="text" class="input-group form-control"
+                            placeholder="Contact's Full Name*" required><br/>
+                 </div>
+         </div> 
+         
+         <div class="col-md-6">
+             <div class="input-group">
+                 <input style="height:40px; " id="yourName" type="text" class="input-group form-control"
+                        placeholder="Organizer's Full Name*" required><br/>
+         </div>
+     </div>	 
+     </div>
+
+<div style="margin-left:0px;margin-bottom:5px;" class="row">
+<div class="col-md-4">
+           <div class="input-group">
+                <p style="font-size:19px;margin-top:5px;">Conference timing:</p>
+       </div>
+ </div>
+  <div class='col-md-4' style="margin-bottom:5px;">
+      <input style="height:40px; " placeholder="Start Date & Time*" type='text' class="form-control search-query" id='start_cs' required>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#start_cs').datetimepicker();
+      });
+  </script>
+
+
+  <div class='col-md-4' style="margin-bottom:0px;">
+  <input style="height:40px; " placeholder="End Date & Time" type='text' class="form-control search-query" id='end_cs' />
+</div>
+<script type="text/javascript">
+  $(function () {
+      $('#end_cs').datetimepicker();
+  });
+</script>
+
+</div>
+
+  <div style="margin-left:0px;margin-bottom:0px;" class="row">
+  
+  <div class="col-md-4" style="margin-bottom:5px;">
+                 <textarea  maxlength="50" rows="2" id="callTitle" class="input-group form-control search-query"
+                        placeholder="Title* (max 50 chars.)"></textarea><br/>
+         </div>
+  
+      <div class="col-md-8" style="margin-left:0px;">
+                  <textarea rows="2" maxlength="100" id="callDesc" class="input-group form-control search-query"
+                         placeholder="Description (max 100 chars.)" ></textarea><br/>
+      </div> 
+</div>
+
+<div class="row">
+<div class="col-md-7" style="margin-left:0px; margin-bottom:5px;">
+ <div id="outerdiv"> 
+<iframe src="https://www.file.io/" id="innerIframe" scrolling="no" style="margin-left:10px;"></iframe> 
+</div>
+</div>
+<div class="col-md-5" style="margin-left:0px;">
+        <div class="input-group">
+            <input style="width:100%;" id="file1" type="text" class="input-group form-control search-query"
+                   placeholder=" Link to a File" /><br/>
+        </div>
+        <br/>
+		<div class="input-group">
+            <input style="width:100%;" id="file2" type="text" class="input-group form-control search-query"
+                   placeholder=" Link to a File" /><br/>
+        </div>
         
-   </body>     
+</div>
+ </div>
+
+<div style="margin-bottom:5px;" class="row">
+<div class="col-md-12" style="margin-left:10px;">
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://drive.google.com')">Google Drive</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://gofile.io/uploadFiles')">Gofile</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://dropbox.com')">Dropbox</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://www.microsoft.com/en-in/microsoft-365/onedrive/online-cloud-storage')">OneDrive</button>
+</div>
+ </div>
+ 
+<!--  <div style="margin-left:0px;margin-bottom:15px;" class="row">
+<div class="col-md-8">
+           <div class="input-group">
+                <p style="font-size:19px;margin-top:5px;"> Schedule invite instead of sending right away:</p>
+       </div>
+ </div> 
+  <div class='col-md-4' style="margin-bottom:5px;">
+      <input style="height:40px; " placeholder="Select date and time" type='text' class="input-group date form-control" id='schedule' required>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#schedule').datetimepicker({ 
+        	  format: 'DD/MM/YYYY H:m:s'
+        	  });
+      });
+  </script>
+</div>  -->
+
+ 
+<div style="margin-left:0px;margin-bottom:0px;" class="row">
+<div class="col-md-12">
+          <button class="btn btn-dark" style="border-color:black; width:100%; height:60px;"  onclick="sendOneOneMeetingDetails()"><font size="4">Send Meeting Details</font></button>
+  </div>
+  </div>
+</div>
+
+   <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+    
+    </div>
+    
+  </div>
+</div>
+
+<script>
+function sendOneOneMeetingDetails(){
+	var contactEmail = document.getElementById('contactEmail').value.trim();
+	var yourEmail = document.getElementById('yourEmail').value.trim();
+	var contactName = document.getElementById('contactName').value.trim().replace(/ /g,'_');
+	var yourName = document.getElementById('yourName').value.trim().replace(/ /g,'_');
+	var start_cs = document.getElementById('start_cs').value.trim().replace(/ /g,'_');
+	var end_cs = document.getElementById('end_cs').value.trim().replace(/ /g,'_');
+	//var schedule = document.getElementById('schedule').value.trim();
+	var callTitle = document.getElementById('callTitle').value.trim().replace(/ /g,'_');
+	var callDesc = document.getElementById('callDesc').value.trim().replace(/ /g,'_');
+	var file1 = document.getElementById('file1').value.trim();
+	var file2 = document.getElementById('file2').value.trim();
+	
+	if((contactEmail == "") || (yourEmail == "") || (start_cs == "") || (callTitle  == "")){
+		alert('Please enter all mandatory fields marked by *');
+	}else {
+		
+		$.post("https://cliosuite-292503.ue.r.appspot.com/appointment?email="+contactEmail+"&email1="+yourEmail+"&contactName="+contactName+
+				"&yourName="+yourName+"&start="+start_cs+"&end="+end_cs+"&callTitle="+
+				callTitle+"&callDesc="+callDesc+"&file1="+file1+"&file2="+file2, function(data, status){
+	        if(data == 'success'){
+	        	alert('Meeting details are sent. Please check your email after some time.');
+
+	        } else {
+	            alert("There was some issue in sending the conference details. " +
+	            		"Please try again later or contact support@cliosight.com");
+	        }
+	    });
+	}
+	
+}
+
+function comingSoon(){
+	alert('Please sign up to get access to the full version.');
+}
+</script>
+
+<!------------------------ Group Call Modal ---------------------------->
+<div class="modal fade" id= "createGroupModal" role="dialog">
+<div class="modal-dialog modal-md">
+  <div class="modal-content">
+  
+    <div class="modal-header">
+    <div style="display: flex; justify-content: center;">
+    <h2 style="font-family:arial-black;margin-left:10px;"> <font color="black">Team Video Conference</font></h2>
+    </div>
+    
+      <button type="button" class="close" data-dismiss="modal">&times;</button>        
+    </div>
+    
+    <div class="modal-body">
+    
+     <div class="container">
+     
+     <div class="row">
+         <div class="col-md-5" style="margin-top:0px;">
+			<div class="input-group">
+                     <input style="height:40px; " id="regEmailGroup" type="email" class="input-group form-control"
+                            placeholder="Cliosuite Registered Email" />
+         </div> 
+         </div>
+         </div>
+         
+         <div class="row">
+         <div class="col-md-5" style="margin-top:10px;">
+             <div class="input-group">
+                 <input style="height:40px; " id="regPasswordGroup" type="password" class="input-group form-control"
+                        placeholder="Cliosuite Passoword" /><br/>
+             </div>
+     </div> 
+     </div>
+     
+     <div class="row" style="margin-bottom:15px;">
+          
+          <div class="col-md-5">
+                  <div class="input-group">
+                      <p style="font-size:17px;"> Not registered yet? <a href="http://signup.cliosight.com/" target="_blank" style="color:blue" >Sign up</a></p>
+              </div>
+          </div> 
+  </div>
+  
+     
+     <div class="row">
+
+     <div class="col-md-5" style="margin-bottom:15px;">
+     <p style="color: black; "><font size="4px">Contact Details (max. 15 - list+CSV)</font></p>
+     <div class="row">
+
+    <div class="col">
+      <button style="width:100%; display:flex; justify-content:center;margin-bottom:5px;" class="add_field_button_ct btn btn-dark"><font size="3px">Add more Contacts</font></button>
+     </div>
+     
+     </div>
+     
+     <div class="input_fields_wrap_ct">
+          <div class="input-group">
+      		<input style="height: 35px; width:100%; margin-left:0px;margin-bottom:5px; " 
+      			type="text" name="contactNameG[]" id="contactNameG" placeholder=" Contact Name" /> 
+      	  </div>
+
+             <div class="input-group">
+         		<input style="height: 35px; width:100%; margin-left:0px;margin-bottom:5px; " 
+         			type="email" name="contactEmailG[]" id="contactEmailG" placeholder=" Email ID*" />
+         	</div>
+         		
+         	<div class="row">
+         		<div class="col-md-5">
+         		<div class="input-group">
+         		<input style="height: 35px; width:100%; margin-left:0px;margin-bottom:5px; " 
+         			type="number" name="cCode[]" id="cCode" placeholder=" Country Code" />
+         		</div>
+         		</div>
+         		<div class="col-md-7">
+         		<div class="input-group">
+         		<input style="height: 35px; width:100%; margin-left:0px;margin-bottom:5px; " 
+         			type="number" name="mobile[]" id="mobile" placeholder=" Mobile Number" />
+         		</div>
+         		</div>
+         		
+         	</div>
+         	
+         </div>
+         		
+      </div>
+      
+      <script>
+      var max_fields_ct      = 19; 
+      var wrapper_ct   		= $(".input_fields_wrap_ct"); 
+      var add_button_ct      = $(".add_field_button_ct"); 
+      var x_ct = 0; 
+      $(add_button_ct).click(function(e){ 
+      e.preventDefault();
+      if(x_ct < max_fields_ct){
+     	  x_ct++; 
+      $(wrapper_ct).append('<div class="row"><div class="col-md-12" style="margin-top:5px;"> <div class="input-group"><input style="height: 35px; width: 100%; margin-bottom:5px;margin-left:0px;" type="text" name="contactNameG[]" id="contactNameG'+x_ct+'"  placeholder=" Contact Name" /></div> <div class="input-group"><input style="margin-left:0px; height: 35px; width: 100%; margin-bottom:5px;" type="email" name="contactEmailG[]" id="contactEmailG'+x_ct+'"  placeholder=" Email ID" /></div> <div class="row"> <div class="col-md-5"><div class="input-group"><input style="height: 35px; width:100%; margin-left:0px;margin-bottom:5px;" type="number" name="cCode[]" id="cCode'+x_ct+'"  placeholder=" Country Code" /></div></div> <div class="col-md-7"><div class="input-group"><input style="height: 35px; width:100%; margin-left:0px;margin-bottom:5px;" type="number" name="mobile[]" id="mobile'+x_ct+'"  placeholder=" Mobile Number" /></div></div> </div></div><a style="display:flex; justify-content:left;margin-top:5px;margin-bottom:5px;" href="#" class="col-md-1"><font color="red" size="3">Remove</font></a>'); 
+      }
+      });
+
+      $(wrapper_ct).on("click",".col-md-1", function(e){ 
+
+      e.preventDefault(); 
+      $(this).parent('div').remove(); 
+      x_ct--;
+      $( 'input[name="contactNameG[]"]' ).each(function(index) {
+      	
+      });
+      })
+      </script>
+      
+      </div>
+      
+<div style="margin-bottom:0px;" class="row">
+<div class="col-md-5">
+
+        <div class="input-group">
+            <input id="contactsCSVGrp" type="text" class="input-group form-control"
+                   placeholder=" URL of CSV file (single Excel worksheet or text)" /><br/>
+        </div>
+        
+    </div>
+</div> 
+
+<div class="row" style="margin-bottom:10px;">
+          <div class="col-md-5">
+                  <div class="input-group">
+                      <p style="font-size:15px;">CSV Eg. Jane Doe, jane@doe.com, 91-123456789</p>
+              </div>
+          </div> 
+  </div>
+       
+       
+<div style="margin-bottom:10px;" class="row">
+<div class="col-md-5">
+<p style="color: black; "><font size="4px">Call Details </font></p>
+        <div class="input-group">
+            <input id="callTitleGroup" type="text" class="input-group form-control"
+                   placeholder="Title* (max 50 chars)" /><br/>
+        </div>
+        
+    </div>
+</div> 
+<div style="margin-bottom:10px;" class="row">
+<div class="col-md-5">
+        <div class="input-group">
+            <textarea id="callDescGroup" rows="2" type="text" class="form-control"
+                   placeholder="Description (max 100 chars)"></textarea>
+        </div>
+        
+    </div>
+</div> 
+
+<div class="row" style="margin-bottom:10px;">
+        <div class="col-md-5">
+                     <input id="roomName" type="email" class="form-control"
+                            placeholder="Room Name* (min. 15 & and max. 30 chars.)" required>
+         </div> 
+         </div>
+         
+         <div class="row" style="margin-bottom:10px;">
+         <div class="col-md-5">
+                 <input id="roomPassword" type="text" class="form-control"
+                        placeholder="Passoword (to be set in the room's security option)" />
+     </div> 
+</div>
+
+     
+<div style="margin-bottom:10px;" class="row">
+<div class="col-md-5" style="">
+            <select id="purposeGroup" class="input-group form-control" style="height:35px; border-radius:2px;width:100%;">
+            	<option value="none" selected>Purpose of the call</option>
+            	<option value="support" >Customer Support</option>
+            	<option value="appointment" >Professional Consultation</option>
+            	<option value="meeting" >Business Meeting</option>
+            	<option value="interview" >Interview</option>
+            	<option value="class" >Online Coaching</option>
+            	<option value="servicing" >Servicing</option>
+            </select>
+        </div>
+        
+    </div>
+
+<div style="margin-bottom:10px;" class="row">
+    <div class="col-md-5">
+            <div class="input-group">
+                <input id="otherPurposeGroup" type="text" class="input-group form-control"
+                       placeholder="Not Listed? Enter purpose here" /><br/>
+            </div>
+            
+        </div>
+    </div> 
+    
+<div style="margin-bottom:10px;" class="row">
+<div class="col-md-5">
+<div class="row">
+  <div class='col'>
+      <input placeholder="Start Date and Time*" type='text' class="form-control" id='start_ctGroup' required>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#start_ctGroup').datetimepicker();
+      });
+  </script>
+
+  <div class='col' style="margin-bottom:0px;">
+  <input placeholder="End Date and Time" type='text' class="form-control" id='end_ctGroup' />
+</div>
+<script type="text/javascript">
+  $(function () {
+      $('#end_ctGroup').datetimepicker();
+  });
+</script>
+</div>
+
+</div>
+</div>
+
+<!-- 
+<div style="margin-bottom:10px;" class="row">
+<div class="col-md-5">
+<div class="row">
+  <div class='col' >
+           <div class="input-group">
+                <p style="font-size:16px;margin-top:10px;">Schedule email invite:</p>
+       </div>
+ </div> 
+  <div class='col' style="margin-bottom:5px;">
+      <input style="height:40px; " placeholder="Select date and time" type='text' class="form-control" id='scheduleGrp' required>
+  </div>
+  </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#scheduleGrp').datetimepicker();
+      });
+  </script>
+</div>  -->
+
+
+<div style="margin-bottom:5px;" class="row">
+<div class="col-md-12">
+ <div id="outerdiv1"> 
+<iframe src="https://www.file.io/" id="innerIframe1" scrolling="no" style="width:450px;"></iframe> 
+</div>
+</div>
+</div>
+
+<div class="row" style="border-color:black; border-width:2px;">
+
+<div class="col-md-5" style="margin-left:5px;">
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://drive.google.com')">Google Drive</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://gofile.io/uploadFiles')">Gofile</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://dropbox.com')">Dropbox</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://www.microsoft.com/en-in/microsoft-365/onedrive/online-cloud-storage')">OneDrive</button>
+</div>
+</div>
+
+<div style="margin-bottom:15px;" class="row">
+<div class="col-md-5">
+            <input id="file1" type="text" class=" form-control search-query"
+                   placeholder=" Link to a File" />
+        </div>
+    </div>
+
+<div style="margin-bottom:15px;" class="row">
+<div class="col-md-5">
+            <input id="file2" type="text" class=" form-control search-query"
+                   placeholder=" Link to a File" />
+        </div>
+</div> 
+
+<div style="margin-bottom:0px;margin-top:20px;" class="row">
+     <div class="col-md-5" style="">
+     <p style="color: black; "><font size="4px">Organizer Details</font></p>
+     </div>
+ </div>
+ <div style="margin-bottom:10px;margin-top:0px;" class="row">
+     <div class="col-md-5">
+     <div class="row">
+  		<div class='col'>
+             <div class="input-group">
+                 <input id="callerFirstNameGroup" type="text" class="form-control"
+                        placeholder="Organizer's Name*" required><br/>
+             </div>
+         </div>
+     </div>
+ </div> 
+ </div>
+
+  <div style="margin-bottom:10px;" class="row">
+      <div class="col-md-5">
+              <div class="input-group">
+                  <input id="organizerEmailGroup" type="email" class="form-control"
+                         placeholder="Organizer's Email Id*" required><br/>
+              </div>
+              
+          </div>
+      </div> 
+
+<div style="margin-bottom:10px;" class="row">
+<div class="col-md-2" style="margin-bottom:10px;">
+<div class="input-group">
+<input style="width:100%;" id="callerCodeGroup" type="number" class="form-control"
+       placeholder="Country Code" /> <br/>
+</div>
+</div>
+
+<div class="col-md-3" style="">
+    <div class="input-group">
+        <input style="width:100%;" id="callerMobileGroup" type="number" class="form-control"
+               placeholder="Organizer's Mobile No." /> <br/>
+</div>
+</div> 
+
+</div>
+
+<div style="margin-top:0px;" class="row">
+<div class="col-md-5" style="margin-bottom:10px;">
+          <button class="btn btn-dark" style="width:100%; height:55px; border-color: white; border-width:1px;"  onclick="comingSoon()"><font size="4">Send Meeting Details</font></button>
+  </div>
+</div>
+
+</div>
+
+
+   <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+    
+    </div>
+    
+  </div>
+</div>
+</div>
+
+<script>
+function sendTeamMeetingDetails(){
+	var contactEmail = document.getElementById('contactEmail').value.trim();
+	var yourEmail = document.getElementById('yourEmail').value.trim();
+	var countryCodeC = document.getElementById('countryCodeC').value.trim();
+	var countryCode = document.getElementById('countryCode').value.trim();
+	var contactMobileC = document.getElementById('contactMobileC').value.trim();
+	var contactMobile = document.getElementById('contactMobile').value.trim();
+	var start_cs = document.getElementById('start_cs').value.trim();
+	var end_cs = document.getElementById('end_cs').value.trim();
+	var callTitle = document.getElementById('callTitle').value.trim();
+	var callDesc = document.getElementById('callDesc').value.trim();
+	var file1 = document.getElementById('file1').value.trim();
+	var file2 = document.getElementById('file2').value.trim();
+	
+	if((contactEmail == "") || (yourEmail == "")|| (start_cs == "")|| (callTitle == "" )){
+		alert('Please enter all mandatory field values');
+	}else {
+		callTitle = callTitle.substr(0,50);
+		callDesc = callDesc.substr(0,100);
+		
+		$.get("https://cliosuite-292503.ue.r.appspot.com/meeting?email="+contactEmail+"&email1="+yourEmail+"&countryCode="+countryCodeC+"&countryCode1="+countryCode+"&contactMobile="+contactMobileC+"&contactMobile1="+contactMobile+"&start="+start_cs+"&end="+end_cs+"&callTitle="+callTitle+"&callDesc="+callDesc+"&file1="+file1+"&file2="+file2+"&file3="+file3, function(data, status){
+	        if(status == 'success'){
+	        	alert('Meeting details are being sent. Please check your email after some time.');
+
+	        } else {
+	            alert("There was some issue in sending the conference details. " +
+	            		"Please try again later or contact support@cliosight.com");
+	        }
+	    });
+	}
+	
+}
+</script>
+
+<!------------------------ Broadcast Schedule ---------------------------->
+     
+<div class="modal fade" id= "broadcastModal" role="dialog">
+<div class="modal-dialog modal-md">
+  <div class="modal-content">
+  
+    <div class="modal-header">
+    <div style="display: flex; justify-content: center;">
+    <h2 style="font-family:arial-black;margin-left:10px;"> <font color="black">Video Broadcast</font></h2>
+    </div>
+    
+      <button type="button" class="close" data-dismiss="modal">&times;</button>        
+    </div>
+    
+    <div class="modal-body">
+    
+     <div class="container">
+     
+     <div class="row">
+         <div class="col-md-5" style="margin-top:0px;">
+			<div class="input-group">
+                     <input style="height:40px; " id="regEmailB" type="email" class="input-group form-control"
+                            placeholder="Cliosuite Registered Email" />
+         </div> 
+         </div>
+         </div>
+         
+         <div class="row">
+         <div class="col-md-5" style="margin-top:10px;">
+             <div class="input-group">
+                 <input style="height:40px; " id="regPasswordB" type="password" class="input-group form-control"
+                        placeholder="Cliosuite Passoword" /><br/>
+             </div>
+     </div> 
+     </div>
+     
+     <div class="row" style="margin-bottom:10px;">
+          
+          <div class="col-md-5">
+                  <div class="input-group">
+                      <p style="font-size:17px;"> Not registered yet? <a href="http://signup.cliosight.com/" target="_blank" style="color:blue" >Sign up</a></p>
+              </div>
+          </div> 
+  </div>
+  
+     
+     <div class="row">
+
+     <div class="col-md-5" style="margin-bottom:15px;">
+     <p style="color: black; "><font size="4px">Contact Details (upto 50 contacts - list+CSV)</font></p>
+     <div class="row">
+
+    <div class="col">
+      <button style="width:100%; display:flex; justify-content:center;margin-bottom:5px;" class="add_field_button_b btn btn-dark"><font size="3px">Add more Contacts</font></button>
+     </div>
+     
+     </div>
+     
+     <div class="input_fields_wrap_b">
+          <div class="input-group">
+      		<input style="height: 35px; width:100%; margin-left:0px;margin-bottom:5px; " 
+      			type="text" name="contactNameB[]" id="contactNameB" placeholder=" Contact Name" /> 
+      	  </div>
+
+             <div class="input-group">
+         		<input style="height: 35px; width:100%; margin-left:0px;margin-bottom:5px; " 
+         			type="email" name="contactEmailB[]" id="contactEmailB" placeholder=" Email ID*" />
+         	</div>
+         		
+         	<div class="row">
+         		<div class="col-md-5">
+         		<div class="input-group">
+         		<input style="height: 35px; width:100%; margin-left:0px;margin-bottom:5px; " 
+         			type="number" name="cCodeB[]" id="cCodeB" placeholder=" Country Code" />
+         		</div>
+         		</div>
+         		<div class="col-md-7">
+         		<div class="input-group">
+         		<input style="height: 35px; width:100%; margin-left:0px;margin-bottom:5px; " 
+         			type="number" name="mobileB[]" id="mobileB" placeholder=" Mobile Number" />
+         		</div>
+         		</div>
+         		
+         	</div>
+         	
+         </div>
+         		
+      </div>
+      
+      <script>
+      var max_fields_b      = 49; 
+      var wrapper_b   		= $(".input_fields_wrap_b"); 
+      var add_button_b      = $(".add_field_button_b"); 
+      var x_b = 0; 
+      $(add_button_b).click(function(e){ 
+      e.preventDefault();
+      if(x_b < max_fields_b){
+     	  x_b++; 
+      $(wrapper_b).append('<div class="row"><div class="col-md-12" style="margin-top:5px;"> <div class="input-group"><input style="height: 35px; width: 100%; margin-bottom:5px;margin-left:0px;" type="text" name="contactNameB[]" id="contactName'+x_b+'"  placeholder=" Contact Name" /></div> <div class="input-group"><input style="margin-left:0px; height: 35px; width: 100%; margin-bottom:5px;" type="email" name="contactEmailB[]" id="contactEmailB'+x_b+'"  placeholder=" Email ID" /></div> <div class="row"> <div class="col-md-5"><div class="input-group"><input style="height: 35px; width:100%; margin-left:0px;margin-bottom:5px;" type="number" name="cCodeB[]" id="cCodeB'+x_b+'"  placeholder=" Country Code" /></div></div> <div class="col-md-7"><div class="input-group"><input style="height: 35px; width:100%; margin-left:0px;margin-bottom:5px;" type="number" name="mobileB[]" id="mobileB'+x_b+'"  placeholder=" Mobile Number" /></div></div> </div></div><a style="display:flex; justify-content:left;margin-top:5px;margin-bottom:5px;" href="#" class="col-md-1"><font color="red" size="3">Remove</font></a>'); 
+      }
+      });
+
+      $(wrapper_b).on("click",".col-md-1", function(e){ 
+
+      e.preventDefault(); 
+      $(this).parent('div').remove(); 
+      x_b--;
+      $( 'input[name="contactNameB[]"]' ).each(function(index) {
+      	
+      });
+      })
+      </script>
+      
+      </div>
+      
+<div style="margin-bottom:0px;" class="row">
+<div class="col-md-5">
+        <div class="input-group">
+            <input id="contactsCSV" type="text" class="input-group form-control"
+                   placeholder=" URL of CSV file (single Excel worksheet or text)" /><br/>
+        </div>
+        
+    </div>
+</div> 
+
+<div class="row" style="margin-bottom:10px;">
+          <div class="col-md-5">
+                  <div class="input-group">
+                      <p style="font-size:15px;">CSV Eg. Jane Doe, jane@doe.com, 91-123456789</p>
+              </div>
+          </div> 
+  </div>
+       
+<div style="margin-bottom:10px;" class="row">
+<div class="col-md-5">
+<p style="color: black; "><font size="4px">Broadcast Details </font></p>
+        <div class="input-group">
+            <input id="callTitleB" type="text" class="input-group form-control"
+                   placeholder=" Broadcast Title* (max 50 characters)" /><br/>
+        </div>
+        
+    </div>
+</div> 
+<div style="margin-bottom:10px;" class="row">
+<div class="col-md-5">
+        <div class="input-group">
+            <textarea id="callDescB" rows="2" type="text" class="input-group form-control"
+                   placeholder="Broadcast Description (max 100 characters)"></textarea>
+        </div>
+        
+    </div>
+</div> 
+
+<div style="margin-bottom:10px;" class="row">
+<div class="col-md-5" style="">
+<div class="row">
+<div class="col">
+        <div class="input-group">
+            <select id="purposeB" class="form-control input-group" style="height:35px; border-radius:2px;width:100%;">
+            	<option value="" selected>Purpose </option>
+            	<option value="social" >Social Connection</option>
+            	<option value="promo" >Promotional</option>
+            	<option value="meeting" >Business</option>
+            	<option value="class" >Coaching</option>
+            </select>
+        </div>
+</div>
+
+    <div class="col">
+            <div class="input-group">
+                <input id="otherPurposeB" type="text" class="form-control input-group"
+                       placeholder="Not Listed? Enter here" /><br/>
+            </div>
+            
+        </div>
+    </div> 
+  </div>  
+  </div>
+<div style="margin-bottom:10px;" class="row">
+<div class="col-md-5">
+<div class="row">
+  <div class='col'>
+      <input placeholder="Start Date and Time*" type='text' class="form-control input-group" id='start_ctB' required>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#start_ctB').datetimepicker();
+      });
+  </script>
+
+  <div class='col' style="margin-bottom:0px;">
+  <input placeholder="End Date and Time" type='text' class="form-control input-group" id='end_ctB' />
+</div>
+<script type="text/javascript">
+  $(function () {
+      $('#end_ctB').datetimepicker();
+  });
+</script>
+</div>
+
+</div>
+</div>
+<!-- <div style="margin-bottom:10px;" class="row">
+<div class="col-md-5">
+<div class="row">
+  <div class='col' >
+           <div class="input-group">
+                <p style="font-size:16px;margin-top:10px;">Schedule email invite:</p>
+       </div>
+ </div> 
+  <div class='col' style="margin-bottom:5px;">
+      <input style="height:40px; " placeholder="Select date and time" type='text' class="form-control" id='scheduleB' required>
+  </div>
+  </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#scheduleB').datetimepicker();
+      });
+  </script>
+</div>
+ -->
+
+
+<div style="margin-bottom:5px;" class="row">
+<div class="col-md-12">
+ <div id="outerdiv1"> 
+<iframe src="https://www.file.io/" id="innerIframe1" scrolling="no" style="width:450px;"></iframe> 
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-5" style="margin-left:5px;">
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://drive.google.com')">Google Drive</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://gofile.io/uploadFiles')">Gofile</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://dropbox.com')">Dropbox</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://www.microsoft.com/en-in/microsoft-365/onedrive/online-cloud-storage')">OneDrive</button>
+</div>
+ </div>
+
+<div style="margin-bottom:15px;" class="row">
+<div class="col-md-5">
+            <input id="file1b" type="text" class="input-group form-control search-query"
+                   placeholder=" Link to a File" />
+        </div>
+    </div>
+
+<div style="margin-bottom:15px;" class="row">
+<div class="col-md-5">
+            <input id="file2b" type="text" class="input-group form-control search-query"
+                   placeholder=" Link to a File" />
+    </div>
+</div> 
+
+
+<div style="margin-bottom:0px;margin-top:20px;" class="row">
+     <div class="col-md-5" style="">
+     <p style="color: black; "><font size="4px">Organizer Details</font></p>
+     </div>
+ </div>
+ <div style="margin-bottom:10px;margin-top:0px;" class="row">
+     <div class="col-md-5">
+     <div class="row">
+  		<div class='col'>
+             <div class="input-group">
+                 <input id="callerFirstNameB" type="text" class="input-group form-control"
+                        placeholder="Organizer's Name*" required><br/>
+             </div>
+         </div>
+     </div>
+ </div> 
+ </div>
+
+  <div style="margin-bottom:10px;" class="row">
+      <div class="col-md-5">
+              <div class="input-group">
+                  <input id="organizerEmailB" type="email" class="input-group form-control"
+                         placeholder="Organizer's Email Id*" required><br/>
+              </div>
+              
+          </div>
+      </div> 
+
+<div style="margin-bottom:10px;" class="row">
+<div class="col-md-2" style="margin-bottom:10px;">
+<div class="input-group">
+<input style="width:100%;" id="callerCodeB" type="number" class="input-group form-control"
+       placeholder="Country Code" /> <br/>
+</div>
+</div>
+
+<div class="col-md-3" style="">
+    <div class="input-group">
+        <input style="width:100%;" id="callerMobileB" type="number" class="input-group form-control"
+               placeholder="Organizer's Mobile No." /> <br/>
+</div>
+</div> 
+
+</div>
+
+<div style="margin-top:0px;" class="row">
+<div class="col-md-5" style="margin-bottom:10px;">
+          <button class="btn btn-dark" style="width:100%; height:55px; border-color: white; border-width:1px;"  onclick="comingSoon()"><font size="4">Send Broadcast Details</font></button>
+  </div>
+</div>
+
+</div>
+
+
+   <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+    
+    </div>
+    
+  </div>
+</div>
+</div>
+
+<script>
+
+function sendBroadcastDetails(){
+	var contactEmail = document.getElementById('contactEmail').value.trim();
+	var yourEmail = document.getElementById('yourEmail').value.trim();
+	var countryCodeC = document.getElementById('countryCodeC').value.trim();
+	var countryCode = document.getElementById('countryCode').value.trim();
+	var contactMobileC = document.getElementById('contactMobileC').value.trim();
+	var contactMobile = document.getElementById('contactMobile').value.trim();
+	var start_cs = document.getElementById('start_cs').value.trim();
+	var end_cs = document.getElementById('end_cs').value.trim();
+	var callTitle = document.getElementById('callTitle').value.trim();
+	var callDesc = document.getElementById('callDesc').value.trim();
+	var file1 = document.getElementById('file1').value.trim();
+	var file2 = document.getElementById('file2').value.trim();
+	var file3 = document.getElementById('file3').value.trim();
+	var file4 = document.getElementById('file4').value.trim();
+	
+	if((contactEmail || yourEmail || start_cs || callTitle ) == ""){
+		alert('Please enter all mandatory field values');
+	}else {
+		callTitle = callTitle.substr(0,50);
+		callDesc = callDesc.substr(0,100);
+		
+		$.get("https://cliosuite-pyscripts-288807.uk.r.appspot.com/broadcast?email="+contactEmail+"&email1="+yourEmail+"&countryCode="+countryCodeC+"&countryCode1="+countryCode+"&contactMobile="+contactMobileC+"&contactMobile1="+contactMobile+"&start="+start_cs+"&end="+end_cs+"&callTitle="+callTitle+"&callDesc="+callDesc+"&file2="+file2+"&file3="+file1+"&file3="+file1+"&file4="+file4, function(data, status){
+	        if(status == 'success'){
+	        	alert('Meeting details are being sent. Please check your email after some time.');
+
+	        } else {
+	            alert("There was some issue in sending the conference details. " +
+	            		"Please try again later or contact support@cliosight.com");
+	        }
+	    });
+	}
+	
+}
+
+
+function copyToClipBoard(txtAreaElem) {
+	var range = document.createRange(); 
+	range.selectNode(document.getElementById(txtAreaElem)); 
+	window.getSelection().removeAllRanges(); 
+	window.getSelection().addRange(range); 
+	document.execCommand("copy"); 
+	window.getSelection().
+	removeAllRanges();
+}
+
+</script>
+
+<!------------------------ Raise Ticket Modal ---------------------------->
+<div class="modal fade" id= "raiseTicketModal" role="dialog">
+<div class="modal-dialog modal-md">
+  <div class="modal-content">
+  
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>        
+    </div>
+    
+    <div class="modal-body">
+    
+    <div style="display: flex; justify-content: center;">
+    <h3> <font color="black">Raise a Support Ticket </font></h3>
+    </div>
+	<br>     
+     <div class="container">
+     
+     <div class="row">
+         <div class="col-md-5" style="margin-top:0px;">
+			<div class="input-group">
+                     <input style="height:40px; " id="regEmailTicket" type="email" class="input-group form-control"
+                            placeholder="Cliosuite Registered Email" />
+         </div> 
+         </div>
+         </div>
+         
+         <div class="row">
+         <div class="col-md-5" style="margin-top:10px;">
+             <div class="input-group">
+                 <input style="height:40px; " id="regPasswordTicket" type="password" class="input-group form-control"
+                        placeholder="Cliosuite Passoword" /><br/>
+             </div>
+     </div> 
+     </div>
+     
+     <div class="row">
+          
+          <div class="col-md-5">
+                  <div class="input-group">
+                      <p style="font-size:17px;"> Not registered yet? <a href="http://signup.cliosight.com/" target="_blank" style="color:blue" >Sign up</a></p>
+              </div>
+          </div> 
+  </div><br/>
+     
+     <div style="margin-bottom:20px;" class="row">
+         <div class="col-md-5">
+             <div id="custom-search-input">
+                 <div class="input-group">
+                     <input id="clientFirstName" type="text" class="input-group form-control"
+                            placeholder="Client First Name" />
+                 </div>
+             </div>
+         </div>
+         </div>
+         
+         <div style="margin-bottom:20px;" class="row">
+         <div class="col-md-5">
+             <div class="input-group">
+                 <input id="clientLastName" type="text" class="input-group form-control"
+                        placeholder="Client Last Name" />
+             </div>
+             
+         </div>
+     </div> 
+     
+     <div style="margin-bottom:20px;" class="row">
+     <div class="col-md-5">
+         <div class="input-group">
+             <input id="clientCompanyName" type="text" class="input-group form-control"
+                    placeholder="Client Company Name" />
+         </div>
+         
+     </div>
+ </div> 
+
+      <div style="margin-bottom:20px;" class="row">
+          <div class="col-md-5">
+                  <div class="input-group">
+                      <input id="clientEmail" type="email" class="input-group form-control"
+                             placeholder="Client Email Id" required>
+                  </div>
+                  
+              </div>
+          </div> 
+
+
+<div style="margin-bottom:10px;" class="row">
+<div class="col-md-2" style="margin-bottom:10px;">
+<div class="input-group">
+    <input style="width:100%;" id="countryCodeClient" type="number" class="input-group form-control"
+           placeholder="Country Code" /> 
+</div>
+</div>
+
+<div class="col-md-3" style="">
+        <div class="input-group">
+            <input style="width:100%;" id="contactMobileClient" type="number" class="input-group form-control"
+                   placeholder="Client Mobile No." /> <br/>
+    </div>
+</div> 
+
+</div>
+
+  <div style="margin-bottom:20px;" class="row">
+      <div class="col-md-5">
+              <div class="input-group">
+                  <input id="issueTitle" type="text" class="input-group form-control"
+                         placeholder="Issue Title" />
+              </div>
+              
+          </div>
+      </div> 
+      
+      <div style="margin-bottom:20px;" class="row">
+      <div class="col-md-5">
+              <div class="input-group">
+                  <textarea id="issueDesc" rows="3" type="text" class="form-control"
+                         placeholder="Issue Description"></textarea>
+              </div>
+              
+          </div>
+      </div> 
+      
+<div style="margin-bottom:5px;" class="row">
+<div class="col-md-12">
+ <div id="outerdiv1"> 
+<iframe src="https://www.file.io/" id="innerIframe1" scrolling="no" style="width:450px;"></iframe> 
+</div>
+</div>
+</div>
+
+<div style="margin-bottom:15px;" class="row">
+<div class="col-md-12">
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://drive.google.com')">Google Drive</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://gofile.io/uploadFiles')">Gofile</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://dropbox.com')">Dropbox</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://www.microsoft.com/en-in/microsoft-365/onedrive/online-cloud-storage')">OneDrive</button>
+</div>
+</div>
+
+
+      <div style="margin-bottom:20px;" class="row">
+      <div class="col-md-5" style="">
+      <div class="row">
+      <div class="col">
+              <div class="input-group">
+                  <select id="dept" class="input-group form-control" style="height:35px; width:100%;">
+                  	<option value="none" selected>Department</option>
+                  	<option value="products" >Product / Service</option>
+                  	<option value="logistics" >Logistics</option>
+                  	<option value="technical" >Technical</option>
+                  	<option value="order" >Order Related</option>
+                  	<option value="payments" >Payments Related</option>
+                  	<option value="offer" >Offer Related</option>
+                  	<option value="marketing" >Marketing</option>
+                  </select>
+              </div>
+      </div> 
+	
+          <div class="col">
+                  <div class="input-group">
+                      <input id="otherDept" type="text" class="input-group form-control"
+                             placeholder="Not Listed? Enter here" /><br/>
+                  </div>
+                  </div>
+              </div>
+          </div> 
+      </div>
+      
+      <div style="margin-bottom:10px;" class="row">
+      <div class="col-md-3" style="margin-bottom:10px;">
+      <h5>Choose Issue Priority (from 0-5)</h5>
+      </div>
+
+      <div class="col-md-2" style="">
+              <div class="input-group">
+                  <input style="width:100%;" id="priority" type="number" class="form-control"
+                         placeholder="Issue Priority" /> <br/>
+          </div>
+      </div> 
+
+      </div>
+
+<div style="" class="row">
+<div class="col-md-5" style="margin-bottom:10px;">
+          <button class="btn btn-dark" style="width:100%; height:55px; border-color: white; border-width:1px;"  onclick="comingSoon()"><font size="4">Raise Ticket</font></button>
+  </div>
+</div>
+
+
+</div>
+
+
+   <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+    
+    </div>
+    
+  </div>
+</div>
+</div>
+
+<!--------------------------- New Contact modal --------------------------->
+
+<div class="modal fade" id="contactModal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>        
+      </div>
+      <div class="modal-body">
+      <div style="display: flex; justify-content: center;">
+      <h3> <font color="black">New Contact</font></h3>
+      </div>
+      
+      <div class="card" style="padding-top:0px;margin-bottom:10px;border-color:white; border-width:1px; border-radius:5px; background-color:white;">
+	  <div class="card-body">
+	  
+	  <div class="row">
+         <div class="col-md-12" style="margin-top:0px;">
+			<div class="input-group">
+                     <input style="height:40px; " id="regEmailC" type="email" class="input-group form-control"
+                            placeholder="Cliosuite Registered Email" />
+         </div> 
+         </div>
+         </div>
+         
+         <div class="row">
+         <div class="col-md-12" style="margin-top:10px;">
+             <div class="input-group">
+                 <input style="height:40px; " id="regPasswordC" type="password" class="input-group form-control"
+                        placeholder="Cliosuite Passoword" /><br/>
+             </div>
+     </div> 
+     </div>
+     
+     <div class="row">
+          
+          <div class="col-md-12">
+                  <div class="input-group">
+                      <p style="font-size:17px;"> Not registered yet? <a href="http://signup.cliosight.com/" target="_blank" style="color:blue" >Sign up</a></p>
+              </div>
+          </div> 
+  </div>
+    <br/>
+     <div style="margin-bottom:15px;" class="row">
+     <div class="col-md-3">
+             <div class="input-group">
+                 <select id="title" class="input-group form-control" style="height:35px;">
+              	   <option value="Mr.">Mr.</option>
+              	   <option value="Ms." >Ms.</option>
+              	   <option value="Mrs." >Mrs.</option>
+              	   <option value="Miss" >Miss</option>
+              	   <option value="Mx." >Mx.</option>
+                 </select>
+            </div>
+         </div>
+
+         <div class="col-md-9">
+                 <div class="input-group">
+                     <input id="firstName" type="text" name="fname" class="input-group form-control"
+                            placeholder="First Name*" required><br/>
+                 </div>
+             </div>
+         </div> 
+         
+     <div style="margin-bottom:15px;" class="row">
+     <div class="col-md-6">
+             <div class="input-group">
+                 <input id="midName" type="text" name="mName" class="input-group form-control"
+                        placeholder="Middle Name" /><br/>
+             </div>
+             </div>
+
+     <div class="col-md-6">
+             <div class="input-group">
+                 <input id="lastName" type="text" name="lname" class="input-group form-control"
+                        placeholder="Last Name" /><br/>
+             </div>
+         </div>
+ </div> 
+ 
+ <div style="margin-bottom:15px;" class="row">
+ <div class="col-md-12">
+         <div class="input-group">
+             <input id="contactID" type="text" class="input-group form-control"
+                    placeholder="Contact ID (optional)" /><br/>
+         </div>
+     </div>
+ </div> 
+
+  <div style="margin-bottom:15px;" class="row">
+  <div class="col-md-12" style="">
+          <div class="input-group">
+              <select id="contactType" class="input-group form-control" style="height:35px; width:100%;">
+              	<option value="none" selected> Contact Type*</option>
+              	<option value="customer" >Customer or Client</option>
+              	<option value="business" >Business Partner</option>
+              	<option value="supplier" >Supplier or Distributor</option>
+              	<option value="entity" >Cliosuite Entity (Store or FC)</option>
+              	<option value="candidate" >Candidate for Hiring</option>
+              	<option value="contractor" >Temporary Contractor</option>
+              	<option value="personnel" >Personnel</option>
+              	<option value="student" >Student or Trainee</option>
+              	<option value="vas" >Value Added Services Partner</option>
+              </select>
+          </div>
+          </div>
+      </div>
+  <div style="margin-bottom:5px;" class="row">
+      <div class="col-md-12">
+              <div class="input-group">
+                  <input id="otherCat" type="text" class="input-group form-control"
+                         placeholder="Not Listed? Enter other type here..." /><br/>
+              </div>
+          </div>
+      </div> 
+
+<br/>
+
+<div style="margin-bottom:15px;" class="row">
+    <div class="col-md-12">
+    <p style="color: black;"><font size="3px">Email IDs, Phone Numbers & Addresses</font></p>
+            <div class="input-group">
+                <input id="contactEmail" type="email" class="input-group form-control"
+                       placeholder="First Contact Email Id*" required><br/>
+        </div>
+    </div> 
+    </div>
+
+<div style="margin-bottom:15px;" class="row">
+    <div class="col-md-12" style="">
+            <div class="input-group">
+                <input id="contactEmail1" type="email" class="input-group form-control"
+                       placeholder="Second Contact Email Id" required><br/>
+        </div>
+    </div> 
+    </div>
+
+<div style="margin-bottom:15px;" class="row">
+    <div class="col-md-12">
+            <div class="input-group">
+                <input id="contactEmail2" type="email" class="input-group form-control"
+                       placeholder="Third Contact Email Id" required><br/>
+        </div>
+    </div> 
+    </div>
+
+<div style="margin-bottom:15px;" class="row">
+   <div class="col">
+         <div class="input-group">
+  <select style="border-radius:3px; height:35px; width:100%;border-color:grey; border-width:1px; background-color:white; font-size:15px; font-color:grey" name="countryCodeContact" id="countryCodeContact">
+  	<option data-countryCode="IN" value="91" Selected>India (+91)</option>
+  </select>
+  </div>
+  </div>
+
+      <div class="col">
+              <div class="input-group">
+                  <input style="width:100%;" id="contactMobile" type="number" class="input-group form-control"
+                         placeholder="First Phone No." /> <br/>
+              </div>
+          </div>
+      </div> 
+      
+<div style="margin-bottom:15px;" class="row">
+   <div class="col">
+         <div class="input-group">
+  <select style="border-radius:3px; height:35px; width:100%;border-color:grey; border-width:1px; background-color:white; font-size:15px; font-color:grey" name="countryCodeContact1" id="countryCodeContact1">
+  	<option data-countryCode="IN" value="91" Selected>India (+91)</option>
+  </select>
+  </div>
+  </div>
+
+      <div class="col">
+              <div class="input-group">
+                  <input style="width:100%;" id="contactMobile1" type="number" class="input-group form-control"
+                         placeholder="Second Phone No." /> <br/>
+              </div>
+          </div>
+      </div> 
+      
+      <div style="margin-bottom:15px;" class="row">
+      <div class="col-md-12">
+              <div class="input-group">
+                  <textarea id="contactAddressHome" rows="2" class="form-control" placeholder="Residence Address"></textarea><br/>
+              </div>
+          </div>
+      </div> 
+      
+      <div style="margin-bottom:15px;" class="row">
+      <div class="col-md-12">
+              <div class="input-group">
+                  <textarea id="contactAddressWork" rows="2" class="form-control" placeholder="Workplace Address"></textarea><br/>
+              </div>
+          </div>
+      </div> 
+
+      <div style="margin-bottom:15px;" class="row">
+            <div class="col-md-12">
+             <p style="color: black;"><font size="3px">Other Details</font></p>
+                    <div class="input-group">
+                        <input style="width:100%;" id="companyName" type="text" class="input-group form-control"
+                               placeholder="Company Name" /> <br/>
+                    </div>
+                </div>
+            </div> 
+            
+            <div style="margin-bottom:15px;" class="row">
+                  <div class="col-md-12">
+                          <div class="input-group">
+                              <input style="width:100%;" id="website" type="text" class="input-group form-control"
+                                     placeholder="Website" /> <br/>
+                          </div>
+                      </div>
+                  </div> 
+                  
+                  <div style="margin-bottom:15px;" class="row">
+                        <div class="col-md-12">
+                                <div class="input-group">
+                                    <input style="width:100%;" id="birthday" type="text" class="input-group form-control"
+                                           placeholder="Birthday" /> <br/>
+                                </div>
+                            </div>
+                        </div> 
+                        
+                        <div style="margin-bottom:15px;" class="row">
+                        <div class="col-md-12">
+                                <div class="input-group">
+                                    <input style="width:100%;" id="socialMedia" type="text" class="input-group form-control"
+                                           placeholder="Social Media Link" /> <br/>
+                                </div>
+                            </div>
+                        </div> 
+                        
+      <div style="margin-bottom:15px;" class="row">
+
+      <div class="col-md-12">
+              <div class="input-group">
+                  <input id="contactSSN" type="text" class="input-group form-control"
+                         placeholder="Contact's Social Security Number" /><br/>
+              </div>
+          </div>
+          </div>
+
+<div style="margin-bottom:5px;" class="row">
+<div class="col-md-12">
+ <div id="outerdiv1"> 
+<iframe src="https://www.file.io/" id="innerIframe1" scrolling="no" style="width:442px;"></iframe> 
+</div>
+</div>
+</div>
+
+<div style="margin-bottom:15px;" class="row">
+<div class="col-md-12">
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://drive.google.com')">Google Drive</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://gofile.io/uploadFiles')">Gofile</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://dropbox.com')">Dropbox</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://www.microsoft.com/en-in/microsoft-365/onedrive/online-cloud-storage')">OneDrive</button>
+</div>
+ </div>
+ 
+ <div style="margin-bottom:0px;" class="row">          
+<div class="col-md-12" style="margin-bottom:10px;">
+        <div class="input-group">
+            <input id="ssnDoc" type="text" class="input-group form-control"
+                   placeholder="SSN Proof Document File" /><br/>
+        </div>
+    </div>
+    </div> 
+
+<div style="margin-bottom:0px;" class="row">
+
+<div class="col-md-12" style="margin-bottom:10px;">
+        <div class="input-group">
+            <input id="contactMultimedia" type="text" class="form-control"
+                   placeholder="Contact Multimedia File 1" /><br/>
+        </div>
+    </div>
+    </div>
+    
+    <div style="margin-bottom:10px;" class="row">
+
+    <div class="col-md-12" style="margin-bottom:10px;">
+            <div class="input-group">
+            <input style="width:100%;" id="contactMultimedia1" type="text" class="form-control"
+                       placeholder="Contact Multimedia File 2" /><br/>
+            </div>
+        </div>
+        
+        </div>
+
+<div class="row" style="margin-top:0px;">
+
+<div class="col-md-12" style="margin-bottom:10px;">
+<p style="color: black;"><font size="3px">Group Assignments (Upto 5 Groups)</font></p>
+ <div class="input_fields_wrap_grp">
+ <button style="width:100%; margin-bottom:5px; display:flex; justify-content:center"  class="add_field_button_grp btn btn-dark"><font size="3px">Add more groups</font></button>
+
+ 		<input style="height: 35px; width:100%; margin-bottom:5px;" 
+ 			type="text" name="groupID[]" id="groupID" placeholder=" Group ID or Group Name" />
+ 		<input style="height: 35px; width:100%; margin-bottom:5px;" 
+ 			type="text" name="emailID[]" id="emailID" placeholder=" Email ID" />
+
+  </div>
+</div>
+    		
+    	<script>
+         var max_fields_grp      = 4; 
+         var wrapper_grp   		= $(".input_fields_wrap_grp"); 
+         var add_button_grp      = $(".add_field_button_grp"); 
+         var x_grp = 0; 
+         $(add_button_grp).click(function(e){ 
+         e.preventDefault();
+         if(x_grp < max_fields_grp){
+        	  x_grp++; 
+        	 $(wrapper_grp).append('<div class="row"><div class="col-md-12"><input style="height: 35px; width: 100%;  margin-bottom:5px;margin-left:0px; " type="text" name="groupID[]" id="groupID'+x_grp+'"  placeholder=" Group ID or Group Name" /><input style="height: 35px; width: 100%;  margin-bottom:5px;margin-left:0px; " type="text" name="emailID[]" id="emailID'+x_grp+'"  placeholder=" Email ID" /></div><a style="display:flex; justify-content:left; margin-top:5px;margin-bottom:5px;margin-left:0px;" href="#" class="col-md-1"><font color="red" size="3">Remove</font></a></div>'); 
+         }
+         });
+
+         $(wrapper_grp).on("click",".col-md-1", function(e){ 
+
+         e.preventDefault(); 
+         $(this).parent('div').remove(); 
+         x_grp--;
+         $( 'input[name="groupID[]"]' ).each(function(index) {
+         	
+         });
+         })
+         </script>
+</div>
+	 
+ <div  style="margin-bottom:0px;" class="row">
+ <div class='col-md-6' style="width:100%;">
+ <p style="font-size:16px;">Preferred Time to Call:</p>
+ </div>
+ </div>
+
+ <div  style="" class="row">
+   <div class='col-md-6' style="width:100%;">
+       <div class="form-group">
+           <div class='input-group date' id='per_start'>
+               <input  placeholder="From" type='text' id="contact_from" class="form-control" />
+               <span class="input-group-addon">
+                   <span class="glyphicon glyphicon-time"></span>
+               </span>
+           </div>
+       </div>
+   </div>
+   <script type="text/javascript">
+       $(function () {
+           $('#contact_from').datetimepicker({
+               format: 'LT'
+           });
+       });
+   </script>
+
+ <div class='col-md-6' style="width:100%;">
+   <div class="form-group">
+       <div class='input-group date' id='per_end'>
+           <input placeholder="To" type='text' id="contact_to" class="form-control" />
+           <span class="input-group-addon">
+               <span class="glyphicon glyphicon-time"></span>
+           </span>
+       </div>
+   </div>
+ </div>
+ <script type="text/javascript">
+   $(function () {
+       $('#contact_to').datetimepicker({
+           format: 'LT'
+       });
+   });
+ </script>
+ </div>
+
+<div style="margin-top:5px;" class="row">
+  <div class="col-md-12">
+          <div class="input-group">
+          <button class="btn btn-dark btn-lg btn-block btn-huge" style="width:100%; height:55px; border-color: grey; border-width:1px;"  onclick="comingSoon()"><font size="4">Save Contact Details</font></button>
+      </div>
+  </div> 
+</div>
+
+</div>
+</div>
+     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<!--------------------------- New Group modal --------------------------->
+
+<div class="modal fade" id="groupModal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>        
+      </div>
+      <div class="modal-body">
+      <div style="display: flex; justify-content: center;">
+      <h3> <font color="black">New Group</font></h3>
+      </div>
+      <div class="card" style="padding-top:0px;margin-bottom:0px;border-color:white; border-width:1px; border-radius:5px; background-color:white;">
+	  <div class="card-body">
+	  
+	  <div class="row">
+         <div class="col-md-12" style="margin-top:0px;">
+			<div class="input-group">
+                     <input style="height:40px; " id="regEmailGr" type="email" class="input-group form-control"
+                            placeholder="Cliosuite Registered Email" />
+         </div> 
+         </div>
+         </div>
+         
+         <div class="row">
+         <div class="col-md-12" style="margin-top:10px;">
+             <div class="input-group">
+                 <input style="height:40px; " id="regPasswordGr" type="password" class="input-group form-control"
+                        placeholder="Cliosuite Passoword" /><br/>
+             </div>
+     </div> 
+     </div>
+     
+     <div class="row">
+          
+          <div class="col-md-12">
+                  <div class="input-group">
+                      <p style="font-size:17px;"> Not registered yet? <a href="http://signup.cliosight.com/" target="_blank" style="color:blue" >Sign up</a></p>
+              </div>
+          </div> 
+  </div>
+    <br/>
+	  
+     <div style="margin-bottom:15px;" class="row">
+
+         <div class="col-md-12">
+                 <div class="input-group">
+                     <input id="gName" type="text" class="input-group form-control"
+                            placeholder="Group Name in > 3 characters *" required><br/>
+                 </div>
+             </div>
+         </div> 
+         
+     <div style="margin-bottom:15px;" class="row">
+     <div class="col-md-12">
+             <div class="input-group">
+                 <input id="gID" type="text" class="input-group form-control"
+                        placeholder="Group ID in > 3 characters (optional)" /><br/>
+             </div>
+         </div>
+     </div> 
+     
+     <div style="margin-bottom:15px;" class="row">
+     <div class="col-md-12">
+             <div class="input-group">
+                 <textarea id="gDesc" rows="2" type="text" class="input-group form-control"
+                        placeholder="Group Description"></textarea>
+             </div>
+         </div>
+     </div>
+     
+     <div style="margin-bottom:15px;" class="row">
+
+     <div class="col-md-12">
+             <div class="input-group">
+                 <input id="gTagline" type="text" class="input-group form-control"
+                        placeholder="Group Tagline" /><br/>
+             </div>
+         </div>
+     </div> 
+
+  <div style="margin-bottom:15px;" class="row">
+  <div class="col-md-3" style="">
+      <h4 style="color: black;"><font size="3px">Purpose</font></h4>
+      </div>
+      <div class="col-md-9" style="">
+          <div class="input-group">
+              <select id="gCat" class="input-group form-control" style="height:35px; width:100%;">
+              	<option value="Customer Support" selected>Customer Support</option>
+              	<option value="IT Support or Development" >IT Support or Development</option>
+              	<option value="Business">Business</option>
+              	<option value="Operations" >Operations</option>
+              	<option value="Training" >Training</option>
+              	<option value="Interview Panel" >Interview Panel</option>
+              	<option value="HR & Finance" >HR & Finance</option>
+              	<option value="VAS Partners" >VAS Partners</option>
+              </select>
+          </div>
+          </div>
+      </div>
+      
+      <div style="margin-bottom:15px;" class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+              <div class="input-group">
+                  <input id="gOtherCat" type="text" class="input-group form-control"
+                         placeholder="Not Listed? Enter here..." /><br/>
+              </div>
+          </div>
+      </div>
+      
+      <div style="margin-bottom:15px;" class="row">
+      <div class="col-md-3" style="">
+      <h4 style="color: black;"><font size="3px"> Scope</font></h4>
+      </div>
+      <div class="col-md-9" style="">
+              <div class="input-group">
+                  <select id="gScope" class="input-group form-control" style="height:35px; width:100%;">
+                  	<option value="Private" >Private</option>
+                  	<option value="Department-wide" >Department-wide</option>
+                  	<option value="Company-wide" >Company-wide</option>
+                  	<option value="Public" Selected>Public</option>
+                  </select>
+              </div>
+              </div>
+          </div>
+      
+      <div style="margin-bottom:0px;margin-top:10px;" class="row">
+      <div class="col-md-12">
+      <p style="color: black;"><font size="3px">Other Details</font></p>
+      </div>
+      </div>
+      
+      <div style="margin-bottom:15px;" class="row">
+      <div class="col-md-12">
+              <div class="input-group">
+                  <input id="gAdminID" type="text" class="search-query input-group form-control" style="color: black;margin-bottom:0px;"
+                         placeholder="Group Admin ID" /><br/>
+              </div>
+          </div>
+      </div> 
+
+<div style="margin-bottom:0px;" class="row">
+    <div class="col-md-12">
+                <input id="gEmail" type="email" class="search-query input-group form-control"
+                       placeholder="Group Email Id*" required><br/>
+        </div>
+    </div> 
+
+      <div style="margin-bottom:15px;" class="row">
+      <div class="col-md-12">
+                  <input  id="driveLink"  type="text" class="search-query input-group form-control"
+                         placeholder="Google Drive or Dropbox Link" />
+          </div>
+      </div> 
+      
+      <div style="margin-bottom:15px;" class="row">
+      <div class="col-md-12">
+                  <input style="width:100%;" id="gWebsite" type="text" class="search-query input-group form-control"
+                         placeholder="Group Website or Company Page" />
+              </div>
+          </div>
+      
+      <div style="margin-bottom:15px;" class="row">
+      <div class="col-md-12">
+                  <input style="width:100%;" id="gSocialMedia" type="text" class="search-query input-group form-control"
+                         placeholder="Social Media" />
+          </div>
+      </div> 
+      
+<div style="margin-bottom:5px;" class="row">
+<div class="col-md-11">
+ <div id="outerdiv1"> 
+<iframe src="https://www.file.io/" id="innerIframe1" scrolling="no" style="width:442px;"></iframe> 
+</div>
+</div>
+</div>
+
+<div style="margin-bottom:10px;" class="row">
+<div class="col-md-12">
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://drive.google.com')">Google Drive</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://gofile.io/uploadFiles')">Gofile</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://dropbox.com')">Dropbox</button>
+<button style="font-size:16px;" class="btn btn-link" onclick="window.open('https://www.microsoft.com/en-in/microsoft-365/onedrive/online-cloud-storage')">OneDrive</button>
+</div>
+</div>
+ 
+ <div style="margin-bottom:0px;" class="row">
+      <div class="col-md-12">
+                  <input id="gLogoFilename" type="text" class="search-query input-group form-control"
+                         placeholder="Group Logo File" /><br/>
+          </div>
+  </div>
+
+<div class="row">
+
+<div class="col-md-12" style="margin-bottom:10px;">
+<p style="color: black;"><font size="3px">Add upto 20 Contacts (Name & Email)</font></p>
+ <div class="input_fields_wrap_ctc">
+ <button style="width:100%; margin-bottom:5px; display:flex; justify-content:center"  class="add_field_button_ctc btn btn-dark"><font size="3px">Add more contacts</font></button>
+
+ 		<input style="height: 35px; width:100%; margin-bottom:10px;" 
+ 			type="text" name="contactNameGrp[]" id="contactNameGrp" class="search-query input-group" placeholder=" Contact Name" />
+
+    		<input style="height: 35px; width:100%; margin-bottom:10px;" 
+    			type="email" name="contactEmailGrp[]" class="search-query input-group" id="contactEmailGrp" placeholder=" Contact Email" />
+    		
+    		</div>
+
+       </div>
+    		
+    		<script>
+         var max_fields_ctc      = 19; 
+         var wrapper_ctc   		= $(".input_fields_wrap_ctc"); 
+         var add_button_ctc      = $(".add_field_button_ctc"); 
+         var x_ctc = 0; 
+         $(add_button_ctc).click(function(e){ 
+         e.preventDefault();
+         if(x_ctc < max_fields_ctc){
+        	  x_ctc++; 
+        	 $(wrapper_ctc).append('<div class="row"><div class="col-md-12"><input style="height: 35px; width: 100%;  margin-bottom:10px;margin-left:0px; " type="text" class="search-query" name="contactNameGrp[]" id="contactNameGrp'+x_ctc+'"  placeholder=" Contact Name" /><input style="height: 35px; width: 100%; margin-bottom:5px;margin-left: 0px;" type="email" name="contactEmailGrp[]" id="contactEmailGrp'+x_ctc+'"  placeholder=" Contact Email" class="search-query" /></div><a style="display:flex; justify-content:left; margin-top:5px;margin-bottom:5px;margin-left:0px;" href="#" class="col-md-1"><font color="red" size="3">Remove</font></a></div>'); 
+         }
+         });
+
+         $(wrapper_ctc).on("click",".col-md-1", function(e){ 
+
+         e.preventDefault(); 
+         $(this).parent('div').remove(); 
+         x_ctc--;
+         $( 'input[name="contactIDGrp[]"]' ).each(function(index) {
+         	
+         });
+         })
+         </script>
+</div>
+
+<div style="margin-bottom:0px;" class="row">
+      <div class="col-md-12">
+                  <input id="gContactsCSV" type="text" class="search-query input-group form-control"
+                         placeholder="Group Contacts CSV File" />
+
+                      <p style="font-size:15px;">CSV Eg. Jane Doe, jane@doe.com</p>
+              </div>
+          </div> 
+
+<div class="row" style="margin-bottom:10px;">
+<p style="font-size:16px;margin-left:15px;">Group Start and Expiry Timestamp:</p>
+<div class="col-md-6" style="margin-bottom:10px;">
+
+    <input placeholder="Start Date and Time" type='text' class="search-query input-group form-control" id='start_ctGroup' />
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#start_ctGroup').datetimepicker();
+    });
+</script>
+
+
+<div class="col-md-6">
+
+<input placeholder="Expiry Date and Time" type='text' class="search-query input-group form-control" id='end_ctGroup' />
+</div>
+<script type="text/javascript">
+$(function () {
+    $('#end_ctGroup').datetimepicker();
+});
+</script>
+
+</div>
+
+<div style="margin-top:0px;" class="row">
+  <div class="col-md-12">
+          <div class="input-group">
+          <button class="btn btn-dark btn-lg btn-block btn-huge" style="width:100%; height:55px; border-color: grey; border-width:1px;"  onclick="comingSoon()"><font size="4">Save Group Details</font></button>
+      </div>
+  </div> 
+</div>
+
+</div>
+	  
+</div>
+     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--------------------------- ticket insights modal --------------------------->
+
+<div class="modal fade" id="supportInsightsModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>        
+      </div>
+      <div class="modal-body">
+      <div style="display: flex; justify-content: center;">
+      <h3> <font color="black">Support Insights</font></h3>
+      </div>
+    
+    
+</div>
+
+   <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+    
+    </div>
+    
+  </div>
+</div>
+
+<!--------------------------- Send ticket email modal --------------------------->
+
+<div class="modal fade" id="sendEmailTicketsModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>        
+      </div>
+      <div class="modal-body">
+      <div style="display: flex; justify-content: center;">
+      <h3> <font color="black">Thanks for trying!</font></h3>
+      </div>
+      
+      <div class="container">
+      <div style="margin-bottom:20px;" class="row">
+      <div class="col-md-12">
+    	<h4> <font color="black">You may get the details of the ticket emailed.<br/> Please <a href='http://signup.cliosight.com/'>sign up</a> for latest updates on the full version of the application.</font></h4>
+     </div>
+     </div>
+     
+     <div style="margin-bottom:20px;" class="row">
+         <div class="col-md-5">
+             <div id="custom-search-input">
+                 <div class="input-group">
+                     <input id="clientFirstName" type="text" class="input-group form-control"
+                            style="height:55px; font-size:22px; " placeholder="Your email" />
+                 </div>
+             </div>
+         </div>
+
+  		<div class="col-md-3">
+          <div class="input-group">
+          <button class="btn btn-dark btn-lg btn-block btn-huge" style="width:100%; height:55px; border-color: grey; border-width:1px;"  onclick="comingSoon()"><font size="4">Save Ticket Details</font></button>
+      </div>
+  </div> 
+</div>
+
+</div>
+	  
+</div>
+    
+   <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+    
+    </div>
+    
+  </div>
+</div>
+
+
+<!--------------------------- Send contact email modal --------------------------->
+
+<div class="modal fade" id="sendEmailContactModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>        
+      </div>
+      <div class="modal-body">
+      <div style="display: flex; justify-content: center;">
+      <h3> <font color="black">Thanks for trying!</font></h3>
+      </div>
+      
+      <div class="container">
+      <div style="margin-bottom:20px;" class="row">
+      <div class="col-md-12">
+    	<h4> <font color="black">You may get the details of the contact emailed.<br/> Please <a href='http://signup.cliosight.com/'>sign up</a> for latest updates on the full version of the application.</font></h4>
+     </div>
+     </div>
+     
+     <div style="margin-bottom:20px;" class="row">
+         <div class="col-md-5">
+             <div id="custom-search-input">
+                 <div class="input-group">
+                     <input id="clientFirstName" type="text" class="input-group form-control"
+                            style="height:55px; font-size:22px;" placeholder="Your email" />
+                 </div>
+             </div>
+         </div>
+
+  		<div class="col-md-3">
+          <div class="input-group">
+          <button class="btn btn-dark btn-lg btn-block btn-huge" style="width:100%; height:55px; border-color: grey; border-width:1px;"  onclick="comingSoon()"><font size="4">Send Contact Details</font></button>
+      </div>
+  </div> 
+</div>
+
+</div>
+	  
+</div>
+    
+   <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+    
+    </div>
+    
+  </div>
+</div>
+
+<!--------------------------- Send group details email modal --------------------------->
+
+<div class="modal fade" id="sendEmailGroupModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>        
+      </div>
+      <div class="modal-body">
+      <div style="display: flex; justify-content: center;">
+      <h3> <font color="black">Thanks for trying!</font></h3>
+      </div>
+      
+      <div class="container">
+      <div style="margin-bottom:20px;" class="row">
+      <div class="col-md-12">
+    	<h4> <font color="black">You may get the details of the group emailed.<br/> Please <a href='http://signup.cliosight.com/'>sign up</a> for latest updates on the full version of the application.</font></h4>
+     </div>
+     </div>
+     
+     <div style="margin-bottom:20px;" class="row">
+         <div class="col-md-5">
+             <div id="custom-search-input">
+                 <div class="input-group">
+                     <input id="clientFirstName" type="text" class="input-group form-control"
+                            style="height:55px; font-size:22px;" placeholder="Your email" />
+                 </div>
+             </div>
+         </div>
+
+  		<div class="col-md-3">
+          <div class="input-group">
+          <button class="btn btn-dark btn-lg btn-block btn-huge" style="width:100%; height:55px; border-color: grey; border-width:1px;"  onclick="comingSoon()"><font size="4">Send Group Details</font></button>
+      </div>
+  </div> 
+</div>
+
+</div>
+	  
+</div>
+    
+   <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+    
+    </div>
+    
+  </div>
+</div>
+
+<!-------------------------------------- End of modals ---------------------------------------->
+
+
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script async defer src="https://www.webrtc-experiment.com/common.js"></script>
+ 
   
 {{else}}
 

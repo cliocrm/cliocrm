@@ -10,7 +10,11 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans|Raleway'>
-    <title>ClioCRM</title>
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+  integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
+  crossorigin="anonymous"></script>
+    <title>Cliosight</title>
   </head>
   
   <style>
@@ -44,7 +48,7 @@ body {
 
 h1,
 h2,
-h3,
+h4,
 h4,
 h5,
 h6 {
@@ -61,7 +65,7 @@ h2 {
     font-size: 1.4rem;
 }
 
-h3 {
+h4 {
     font-size: 1.3rem;
 }
 
@@ -146,8 +150,10 @@ section {
     width: 100%;
     
 }
-.intro>div h1 {
-	font-size: 2rem;
+.intro>div h4 {
+	
+	margin-bottom: 5px;
+	text-align: left;
 }
 
 .ml-1 {
@@ -244,7 +250,7 @@ button.code:hover {
 }
 
 .about {
-	border: 2px solid darkcyan;
+	border: 0px solid darkcyan;
     border-radius: 0px;
     padding-bottom: 5%;
 }
@@ -265,8 +271,8 @@ div.polaroid {
 }
 
 section.components {
-	border: 2px dashed darkcyan;
-	border-radius: 0px; 
+	border: 2px solid darkcyan;
+	border-radius: 10px; 
 	padding: 5%;
 }
 
@@ -307,11 +313,12 @@ section.components {
 }
 
 section.trial {
-	
+	background-color: darkcyan;
 	width: 100%;
 	padding: 5%;
-	border: 2px solid darkcyan;
-	border-radius: 0px;
+	border: 3px solid darkcyan;
+	border-radius: 10px;
+	color: white;
 }
 
 section.trial p {
@@ -433,8 +440,8 @@ section.trial p.black {
 }
 
 section.cliocrm {
-	border: 1px dashed darkcyan;
-	border-radius: 50px;
+	border: 2px dashed darkcyan;
+	border-radius: 10px;
 	padding-top: 5%;
 	margin: 2%;
 	justify-content: center;
@@ -443,9 +450,6 @@ section.cliocrm {
 	
 }
 
-section.intro h1.cliocrmtitle {
- font-size: 50px;
-}
 
 
 hr {
@@ -491,7 +495,7 @@ hr {
 	padding-top: 5%;
 }
 
-section.polaroid h3.text-align-center {
+section.polaroid h4.text-align-center {
 	text-align: center;
 }
 
@@ -655,6 +659,12 @@ button.signup:hover {
 	border-radius: 10px;
 }
 
+
+div.sample_forms.forms {
+	border: 2px solid darckcyan;
+	padding: 5%;
+}
+
 </style>
 
 
@@ -675,19 +685,46 @@ button.signup:hover {
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="/">ClioCRM</a>
+        <a class="navbar-brand" href="/">Cliosight</a>
           <div class="navbar-nav">
             {{#if userContext}}
                 <a class="nav-item nav-link" href="/logout">Logout</a>
             {{else}}
               
               <a class="nav-item nav-link" href="/cliocollab">ClioCollab</a>
-              <a class="nav-item nav-link" href="/signedin">Signedin</a>
+              <a class="nav-item nav-link" href="/signedin">Trial User</a>
             {{/if}}
           </div>
         </div>
     </nav>
     <main class="container pt-4">{{{body}}}</main>
+    <div class="container contact-form">
+			
+			<div class="row  d-flex align-items-center">
+			
+			<div class="col-sm-7">
+			<div class="polaroid" id="contactus">
+			<iframe style="width: 100%; height: 340px;"
+				src="https://app.cliosight.co/app/forms/36/show?noNavbar=true"></iframe>
+			
+			</div>
+		
+			</div>
+			
+			
+			<div class="col-sm-5" style="margin: auto; text-align: center; align-items: center;">
+			<img style="width: 300px;" src="https://link.storjshare.io/s/ju2gtjodyf6ghb2uhy2krx57angq/cliosight-bucket/Original_svg-svg.png?wrap=0" />
+			<h5 style="text-align: center">cliosight@gmail.com</h5>
+				<hr style="border:1px solid black"/>
+				<div style="text-align: center">
+				<a href="linkedin.com">Linkedin</a>&nbsp;|&nbsp;<a href="linkedin.com" >Slack</a> &nbsp;|&nbsp;<a href="linkedin.com">Discord</a>&nbsp;|&nbsp;<a href="linkedin.com">YouTube</a>
+				</div>
+				<hr style="border:1px solid black"/>
+			
+			</div>
+			</div>
+
+</div>
     
 			<div>
 			<h6 class="copyright">Copyright 2022 Cliosight India</h6>
