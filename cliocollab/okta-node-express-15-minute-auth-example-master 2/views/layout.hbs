@@ -150,7 +150,7 @@ section {
     width: 100%;
     
 }
-.intro>div h4 {
+.intro>div h4, h3 {
 	
 	margin-bottom: 5px;
 	text-align: left;
@@ -212,6 +212,11 @@ button.main{
 	
 }
 
+.vl {
+  border-left: 2px solid grey;
+  height: 400px;
+}
+
 section.signup input{
 	border: 1px solid darkcyan;
 	width: 100%;
@@ -271,9 +276,14 @@ div.polaroid {
 }
 
 section.components {
-	border: 2px solid darkcyan;
+	border: 2px dashed darkcyan;
 	border-radius: 10px; 
-	padding: 5%;
+	padding: 3%;
+	
+}
+
+section.components h4 {
+text-align: center;
 }
 
 .features {
@@ -312,16 +322,16 @@ section.components {
     border-bottom-color: var(--accent-color-cyan);
 }
 
-section.trial {
+div.trial {
 	background-color: darkcyan;
 	width: 100%;
 	padding: 5%;
-	border: 3px solid darkcyan;
+	border: 2px solid darkcyan;
 	border-radius: 10px;
 	color: white;
 }
 
-section.trial p {
+div.trial p {
 	font-family: Raleway;
 	color: white;
 	font-weight: 400;
@@ -329,7 +339,7 @@ section.trial p {
 	font-size: 30px;
 }
 
-section.trial p.black {
+div.trial p.black {
 	color: black;
 }
 
@@ -443,9 +453,9 @@ section.cliocrm {
 	border: 2px dashed darkcyan;
 	border-radius: 10px;
 	padding-top: 5%;
-	margin: 2%;
+	margin-top: 5%;
 	justify-content: center;
-	max-width: 95%;
+	
 	text-align:center;
 	
 }
@@ -588,7 +598,13 @@ section.polaroid h4.text-align-center {
 	.btn {
     
     width: 100%;
+	}
 	
+	
+.vl {
+  border-left: 2px solid darkcyan;
+  height: 00px;
+}
 }
 
 @media (max-width: 500px) {
@@ -614,6 +630,12 @@ section.polaroid h4.text-align-center {
 	.container .register button {
 	width: 100%;
 }
+
+.vl {
+  border-left: 2px solid darkcyan;
+  height: 00px;
+}
+
 }
 
  button.code{
@@ -698,13 +720,13 @@ div.sample_forms.forms {
         </div>
     </nav>
     <main class="container pt-4">{{{body}}}</main>
-    <div class="container contact-form">
+    <div class="container contact-form" style="margin-top: 0%">
 			
 			<div class="row  d-flex align-items-center">
 			
-			<div class="col-sm-7">
-			<div class="polaroid" id="contactus">
-			<iframe style="width: 100%; height: 340px;"
+			<div class="col-sm-6">
+			<div class="polaroid" id="contact">
+			<iframe style="width: 100%; height: 330px;"
 				src="https://app.cliosight.co/app/forms/36/show?noNavbar=true"></iframe>
 			
 			</div>
@@ -713,13 +735,15 @@ div.sample_forms.forms {
 			
 			
 			<div class="col-sm-5" style="margin: auto; text-align: center; align-items: center;">
-			<img style="width: 300px;" src="https://link.storjshare.io/s/ju2gtjodyf6ghb2uhy2krx57angq/cliosight-bucket/Original_svg-svg.png?wrap=0" />
+			<br/><br/>
+			<img style="width: 250px;" src="https://link.storjshare.io/s/ju2gtjodyf6ghb2uhy2krx57angq/cliosight-bucket/Original_svg-svg.png?wrap=0" />
+			<br/><br/><br/>
 			<h5 style="text-align: center">cliosight@gmail.com</h5>
-				<hr style="border:1px solid black"/>
+				<hr/>
 				<div style="text-align: center">
 				<a href="linkedin.com">Linkedin</a>&nbsp;|&nbsp;<a href="linkedin.com" >Slack</a> &nbsp;|&nbsp;<a href="linkedin.com">Discord</a>&nbsp;|&nbsp;<a href="linkedin.com">YouTube</a>
 				</div>
-				<hr style="border:1px solid black"/>
+				<hr/>
 			
 			</div>
 			</div>

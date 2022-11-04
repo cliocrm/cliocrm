@@ -65,6 +65,7 @@ app.use('/', require('./routes/index'));
 app.use('/cliocollab', require('./routes/cliocollab'));
 app.use('/signedin', require('./routes/signedin'));
 app.use('/vc', require('./routes/videoconf'));
+app.use('/sample', require('./routes/support'));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`App listening on port ${port}`));
