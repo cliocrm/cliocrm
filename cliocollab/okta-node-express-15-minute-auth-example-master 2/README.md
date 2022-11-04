@@ -1,6 +1,6 @@
 # Editing and extending ClioCollab, the sample Node JS application
 
-This is an example of a simple web application with secure user authentication using Okta's [free developer account](https://developer.okta.com/signup/) and [ClioCRM's](https://cliosight.co#cliocrm) tables, forms, reports and triggers. Rest of the code includes examples of generic REST APIs. Use of ClioCRM's APIs are mentioned explicitly in the [documentation](https://cliosight.co#cliocrm) and code comments.
+This is an example of a simple web application with secure user authentication using Okta's [free developer account](https://developer.okta.com/signup/) and [Cliosight's](https://cliocrm.co) tables, forms, reports and triggers. Rest of the code includes examples of generic REST APIs. Use of Cliosight's APIs are mentioned explicitly in the [documentation](https://cliocrm.co/docs) and code comments.
 
 **Prerequisites**: [Node.js](https://nodejs.org/en/).
 
@@ -33,7 +33,7 @@ You will need to create an application in Okta:
 * Log in to your Okta account, then navigate to **Applications** and click the **Add Application** button
 * Select **Web** and click **Next**
 * Give your application a name (e.g. "ClioCRM Sample App")
-* Change the **Base URI** to `http://localhost:3000/` and the **Login redirect URI** to `http://localhost:3000/callback`, then click **Done**
+* Change the **Base URI** to `http://localhost:3000/` and the **Login redirect URI** to `http://localhost:3000/authorization-code/callback`, then click **Done**
 * Save your **Client ID** and **Client Secret** for later
 
 Your Okta application should have settings similar to the following:
@@ -76,6 +76,12 @@ Now you can run the web server with the following command:
 npm start
 ```
 
-## License
+## Okta License
 
 Apache 2.0, see [LICENSE](LICENSE).
+
+You may try other sample apps like  
+
+1. [Auth0 Samples](https://github.com/auth0-samples)
+2. [OneLogin](https://github.com/onelogin)
+3. [KeyCloak](https://github.com/orgs/keycloak/repositories?type=all)

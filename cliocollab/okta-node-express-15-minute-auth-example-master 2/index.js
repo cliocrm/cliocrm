@@ -47,7 +47,7 @@ const oidc = new ExpressOIDC({
 	    },
 	    callback: {
 	      path: "/callback",
-	      defaultRedirect: "/dashboard"
+	      defaultRedirect: "/"
 	    }
 	  }
 	});
@@ -67,5 +67,5 @@ app.use('/signedin', require('./routes/signedin'));
 app.use('/vc', require('./routes/videoconf'));
 app.use('/sample', require('./routes/support'));
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`App listening on port ${port}`));
